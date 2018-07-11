@@ -5,20 +5,33 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/affablebean.css">
-        <title>The Affable Bean</title>
+        <link rel="stylesheet" type="text/css" href="css/applikaasie.css">
+        <title>Applikaasie 3</title>
     </head>
     <body>
         <div id="main">
             <div id="header">
                 <div id="widgetBar">
 
-                    <div class="headerWidget">
-                        [ language toggle ]
+                    <div class ="searchWidget">
+                        <button id="btnSearch">Search</button>
                     </div>
 
                     <div class="headerWidget">
-                        [ login and logout widget ]
+                        <button id="languageButton">Select a Language</button>
+                    </div>
+
+                    <div id="loginPanel">
+                        <!-- Code for Login Link -->
+                        <a id="login-link" title="Login" href="#login">Login</a>
+                        <!-- Code for login panel -->
+                        <div id="login-panel">
+                            <form action="" method="post">
+                                <label>Username: <input type="text" name="username" value="" /> </label>
+                                <label>Password: <input type="password" name="password" value="" /> </label>
+                                <input type="submit" name="submit" value="Sign In" /> <small>Press ESC to close</small>
+                            </form>
+                        </div>
                     </div>
 
                     <div class="headerWidget">
@@ -27,11 +40,13 @@
                 </div>
 
                 <a href="#">
-                    <img src="/img/gouda.jpg" id="logo" alt="Kaas logo">
+                    <img src="img/gouda.jpg" id="logo" alt="Kaas logo">
                 </a>
 
                 <img src="#" id="logoText" alt="Applikaasie">
             </div>
         </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

@@ -16,31 +16,35 @@
         <div id="main">
 
             <div id="indexLeftColumn">
-                left column
+                <div id="welcomeText">
+                    <p>[ welcome text ]</p>
+                </div>
             </div>
 
             <div id="indexRightColumn">
                 <div class="categoryBox">
                     <a href="#">
-                        <span class="categoryLabelText">dairy</span>
+                        <span class="categoryLabelText">test</span>
                     </a>
                 </div>
                 <div class="categoryBox">
                     <a href="#">
-                        <span class="categoryLabelText">meats</span>
+                        <span class="categoryLabelText">test</span>
                     </a>
                 </div>
                 <div class="categoryBox">
                     <a href="#">
-                        <span class="categoryLabelText">bakery</span>
+                        <span class="categoryLabelText">test</span>
                     </a>
                 </div>
                 <div class="categoryBox">
                     <a href="#">
-                        <span class="categoryLabelText">fruit & veg</span>
+                        <span class="categoryLabelText">test</span>
                     </a>
                 </div>
             </div>
         </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
