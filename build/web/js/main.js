@@ -12,9 +12,21 @@ var rootURL = "http://localhost:8080/restresource";
 var currentArtikel;
 
 
-$("#login-link").click(function () {
-    $("#login-panel").show();
-})
+$("#login-link").click(function() {
+    console.log("click");
+    
+    if($("#login-panel").is(":hidden")) {
+        $("#login-panel").show();
+    }
+    if($("#loging-panel").is(":visible")) {
+        $("#login-panel").hide();
+    }
+    var isVisible = $("#login-panel").is(":visible");
+    console.log ('isVisible:',isVisible);
+    
+    
+});
+
 
 $(document).keydown(function (e) {
     if (e.keyCode == 27) {

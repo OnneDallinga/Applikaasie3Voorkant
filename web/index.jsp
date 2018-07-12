@@ -16,11 +16,11 @@
         <div id="main">
 
             <div id="indexLeftColumn">
+                <a href="view/nieuwklant.jsp">to page nieuwklant</a>
                 <div id="welcomeText">
                     <p>[ welcome text ]</p>
                 </div>
             </div>
-
             <div id="indexRightColumn">
                 <div class="categoryBox">
                     <a href="#">

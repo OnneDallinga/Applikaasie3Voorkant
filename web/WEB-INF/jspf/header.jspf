@@ -6,6 +6,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/applikaasie.css">
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Applikaasie 3</title>
     </head>
     <body>
@@ -46,7 +50,5 @@
                 <img src="#" id="logoText" alt="Applikaasie">
             </div>
         </div>
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/main.js"></script>
     </body>
 </html>
