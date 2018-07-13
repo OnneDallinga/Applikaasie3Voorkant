@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Product information</title>
+        <link rel="stylesheet" type="text/css" href="css/applikaasie.css">
+        <title>Producten overzicht</title>
     </head>
     <body>
 
@@ -24,19 +25,15 @@
 
                 <label>Id:</label>
                 <input id="productId" name="id" type="text" disabled />
-                <br>
 
                 <label>Name:</label>
                 <input type="text" id="name" name="name" required>
-                <br>
 
                 <label>Price:</label>
                 <input type="text" id="price" name="price" required/>
-                <br>
 
                 <label>Stock Quantity:</label>
                 <input type="text" id="stockQuantity" name="stockQuantity" required/>
-                <br>
 
                 <button id="btnSave">Save</button>
                 <button id="btnDelete">Delete</button>
