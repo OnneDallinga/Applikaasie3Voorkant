@@ -33,3 +33,42 @@ $(document).keydown(function (e) {
         $("#login-panel").hide(0);
     }
 });
+
+function findAllProducts() {
+    console.log('findAllProducts');
+	$.ajax({
+		type: 'GET',
+		url: rootURL,
+		dataType: "json", // data type of response
+		success: renderList
+	});
+}
+
+function findProductByName(searchKey) {
+	console.log('findProductByName: ' + searchKey);
+	$.ajax({
+		type: 'GET',
+		url: rootURL + '/search/' + searchKey,
+		dataType: "json",
+		success: renderList 
+	});
+}
+
+function renderDetails(product) {
+	$('#wineId').val(product.id);
+	$('#name').val(product.name);
+        $('#price').val(product.price);
+        $('#stockQuantity').val(product.stockQuantity);
+        $('#productStatus').val(product.productStatus);
+}
+
+function formToJSON() {
+	var productId = $('#productId').val();
+	return JSON.stringify({
+		"id": productId == "" ? null : productId, 
+		"name": $('#name').val(), 
+                "price": $('#price').val(),
+                "stockQuantity": $('stockQuantity').val(),
+                "productStatus": $('productStatus').val()
+		});
+}
