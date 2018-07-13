@@ -34,6 +34,19 @@ $(document).keydown(function (e) {
     }
 });
 
+$('#btnSave').click(function() {
+	if ($('#productId').val() == '')
+		addProduct();
+	else
+		updateProduct();
+	return false;
+});
+
+$('#btnDelete').click(function() {
+	deleteProduct();
+	return false;
+});
+
 function findAllProducts() {
     console.log('findAllProducts');
 	$.ajax({
@@ -55,7 +68,7 @@ function findProductByName(searchKey) {
 }
 
 function renderDetails(product) {
-	$('#wineId').val(product.id);
+	$('#productId').val(product.id);
 	$('#name').val(product.name);
         $('#price').val(product.price);
         $('#stockQuantity').val(product.stockQuantity);
@@ -71,4 +84,54 @@ function formToJSON() {
                 "stockQuantity": $('stockQuantity').val(),
                 "productStatus": $('productStatus').val()
 		});
+}
+
+function addProduct() {
+	console.log('addProduct');
+	$.ajax({
+		type: 'POST',
+		contentType: 'application/json',
+		url: rootURL,
+		dataType: "json",
+		data: formToJSON(),
+		success: function(data, textStatus, jqXHR){
+			alert('Product created successfully');
+			$('#btnDelete').show();
+			$('#productId').val(data.id);
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			alert('addProduct error: ' + textStatus);
+		}
+	});
+}
+
+function updateProduct() {
+	console.log('updateProduct');
+	$.ajax({
+		type: 'PUT',
+		contentType: 'application/json',
+		url: rootURL + '/' + $('#productId').val(),
+		dataType: "json",
+		data: formToJSON(),
+		success: function(data, textStatus, jqXHR){
+			alert('Product updated successfully');
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			alert('updateProduct error: ' + textStatus);
+		}
+	});
+}
+
+function deleteProduct() {
+	console.log('deleteProduct');
+	$.ajax({
+		type: 'DELETE',
+		url: rootURL + '/' + $('#productId').val(),
+		success: function(data, textStatus, jqXHR){
+			alert('Product deleted successfully');
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			alert('deleteProduct error');
+		}
+	});
 }
