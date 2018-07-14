@@ -160,4 +160,20 @@ label{
     background: #eee;
 }
 
+/* product pages styles */
+.leftArea {
+	position: absolute;
+	left: 10px;
+	top: 70px;
+	bottom: 20px;
+	width: 260px;
+	border:solid 1px #CCCCCC;
+	overflow-y: scroll;
+}
+
+.mainArea input {
+  margin-bottom:15px;
+  margin-top:5px;
+  width:260px;
+}
 
