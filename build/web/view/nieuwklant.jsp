@@ -8,26 +8,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
         <form action="#nogintevullen" method="post">
             <div class="form-group">
-                <label for="voornaam">Voornaam</label>
-                <input type="text" id="voornaam" class="form-control"  />
+                <div class="col-lg-4">
+                    <label for="voornaam">Voornaam</label>
+                    <input type="text" id="voornaam" class="form-control"  />
+                </div>
             </div>
             <div class="form-group">
-                <label for="achternaam">Achternaam</label>
-                <input type="text" id="achternaam" class="form-control"  />
+                <div class="col-lg-4">
+                    <label for="achternaam">Achternaam</label>
+                    <input type="text" id="achternaam" class="form-control"  />
+                </div>
             </div>
             <div class="form-group">
-                <label for="toevoeging">Toevoegsel</label>
-                <input type="text" id="toevoeging" class="form-control"  />
+                <div class="col-lg-4">
+                    <label for="toevoeging">Toevoegsel</label>
+                    <input type="text" id="toevoeging" class="form-control"  />
+                </div>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="form-control"  />
+                <div class="col-lg-4">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control"  />
+                </div>
             </div>
             <button type="button" class="btn btn-success">Submit</button>
         </form>

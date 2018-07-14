@@ -8,13 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/applikaasie.css">
         <title>Applikaasie</title>
     </head>
     <body>
         <div id="main">
-
             <div id="indexLeftColumn">
                 <a href="view/nieuwklant.jsp">to page nieuwklant</a>
                 <div id="welcomeText">
@@ -44,7 +41,5 @@
                 </div>
             </div>
         </div>
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/main.js"></script>
     </body>
 </html>
