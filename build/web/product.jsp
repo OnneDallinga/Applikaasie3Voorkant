@@ -16,7 +16,6 @@
 
         <div class="leftArea">
             <ul id="artikelen"></ul>
-            
         </div>
 
         <form id="productForm">
