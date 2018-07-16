@@ -68,7 +68,7 @@ function findAllProducts() {
 
 function addArtikelenToList(artikelen) {
     $.each(artikelen, function(index, artikel) {
-        $("#artikelen").append("<li>" + artikel.name + "</li>");
+        $("#artikelen").append("<li> <a href=" + rootURL + "/product/{" + artikel.id + "}" + ">" + artikel.name + "</a></li>"); 
     });
 }
 
