@@ -47,14 +47,29 @@ $('#btnDelete').click(function() {
 	return false;
 });
 
+$(document).ready(function() {
+    findAllProducts();
+});
+
 function findAllProducts() {
     console.log('findAllProducts');
 	$.ajax({
 		type: 'GET',
-		url: rootURL,
+		url: rootURL + "/product",
 		dataType: "json", // data type of response
-		success: renderList
+		error: function() {
+                    console.log("Error");
+                },
+                success: function(data) {
+                    addArtikelenToList(data);
+                }
 	});
+}
+
+function addArtikelenToList(artikelen) {
+    $.each(artikelen, function(index, artikel) {
+        $("#artikelen").append("<li>" + artikel.name + "</li>");
+    });
 }
 
 function findProductByName(searchKey) {

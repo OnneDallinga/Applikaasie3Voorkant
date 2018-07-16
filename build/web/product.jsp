@@ -15,8 +15,7 @@
     <body>
 
         <div class="leftArea">
-            <ul id="productList"></ul>
-            <%--  list of products here --%>
+            <ul id="artikelen"></ul>
             
         </div>
 
