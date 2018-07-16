@@ -32,8 +32,8 @@
                 <label>Price:</label>
                 <input type="text" id="price" name="price" required/>
 
-                <label>Stock Quantity:</label>
-                <input type="text" id="stockQuantity" name="stockQuantity" required/>
+                <label>Stock:</label>
+                <input type="text" id="stock" name="stock" required/>
 
                 <button id="btnSave">Save</button>
                 <button id="btnDelete">Delete</button>

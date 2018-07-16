@@ -71,7 +71,7 @@ function renderDetails(product) {
 	$('#productId').val(product.id);
 	$('#name').val(product.name);
         $('#price').val(product.price);
-        $('#stockQuantity').val(product.stockQuantity);
+        $('#stock').val(product.stock);
         $('#productStatus').val(product.productStatus);
 }
 
@@ -81,7 +81,7 @@ function formToJSON() {
 		"id": productId == "" ? null : productId, 
 		"name": $('#name').val(), 
                 "price": $('#price').val(),
-                "stockQuantity": $('stockQuantity').val(),
+                "stock": $('#stock').val(),
                 "productStatus": $('productStatus').val()
 		});
 }
@@ -91,7 +91,7 @@ function addProduct() {
 	$.ajax({
 		type: 'POST',
 		contentType: 'application/json',
-		url: rootURL,
+		url: "http://localhost:8080/Appikaasie/REST/product",
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){

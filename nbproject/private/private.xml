@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/marko/projects/NetBeansProjects/Applikaasie3Voorkant/web/index.jsp</file>
+            <file>file:/home/filip/GIT/Applikaasie3Voorkant/web/view/login.jsp</file>
+            <file>file:/home/filip/GIT/Applikaasie3Voorkant/web/js/main.js</file>
+            <file>file:/home/filip/GIT/Applikaasie3Voorkant/web/index.jsp</file>
+            <file>file:/home/filip/GIT/Applikaasie3Voorkant/src/java/com/rsvier/applikaasie3/controller/ControllerServlet.java</file>
+            <file>file:/home/filip/GIT/Applikaasie3Voorkant/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>
