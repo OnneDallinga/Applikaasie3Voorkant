@@ -139,8 +139,6 @@ label{
 /* footer styles */
 #footer {
     height: 60px;
-    width: 350px;
-    clear: left;
     background: #aaa;
 }
 
