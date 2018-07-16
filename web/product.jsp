@@ -17,6 +17,7 @@
         <div class="leftArea">
             <ul id="productList"></ul>
             <%--  list of products here --%>
+            
         </div>
 
         <form id="productForm">

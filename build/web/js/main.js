@@ -7,7 +7,7 @@
 
 // The root URL for the RESTful services
 // TODO: Make sure this works
-var rootURL = "http://localhost:8080/restresource";
+var rootURL = "http://localhost:8080/Appikaasie/REST";
 
 var currentArtikel;
 
@@ -91,7 +91,7 @@ function addProduct() {
 	$.ajax({
 		type: 'POST',
 		contentType: 'application/json',
-		url: "http://localhost:8080/Appikaasie/REST/product",
+		url: rootURL + "/product",
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
