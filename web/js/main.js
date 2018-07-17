@@ -90,6 +90,10 @@ function findAllProducts() {
 }
 
 function addArtikelenToList(artikelen) {
+    var node = document.getElementById("artikelen");
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
+    }
     $.each(artikelen, function(index, artikel) {
         $("#artikelen").append("<li> <a href=./product.jsp?id=" + artikel.id + ">" + artikel.name + "</a></li>"); 
     });
@@ -156,6 +160,7 @@ function addProduct() {
 			alert('addProduct error: ' + textStatus);
 		}
 	});
+
 }
 
 function updateProduct() {
@@ -173,6 +178,8 @@ function updateProduct() {
                     alert('updateProduct error: ' + textStatus);
 		}
 	});
+    findAllProducts();
+    checkHref();    
 }
 
 function deleteProduct() {
