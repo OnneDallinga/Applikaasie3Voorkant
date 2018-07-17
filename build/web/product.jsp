@@ -36,6 +36,7 @@
 
                 <button id="btnSave">Save</button>
                 <button id="btnDelete">Delete</button>
+                <button id="btnReset" type="reset" value="Reset">Reset</button>
 
             </div>
         </form>

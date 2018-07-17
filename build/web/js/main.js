@@ -29,13 +29,13 @@ $("#login-link").click(function() {
 
 
 $(document).keydown(function (e) {
-    if (e.keyCode == 27) {
+    if (e.keyCode === 27) {
         $("#login-panel").hide(0);
     }
 });
 
 $('#btnSave').click(function() {
-	if ($('#productId').val() == '')
+	if ($('#productId').val() === '')
 		addProduct();
 	else
 		updateProduct();
@@ -155,12 +155,14 @@ function addProduct() {
 			alert('Product created successfully');
 			$('#btnDelete').show();
 			$('#productId').val(data.id);
+                         
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			alert('addProduct error: ' + textStatus);
 		}
 	});
-
+        findAllProducts();
+        
 }
 
 function updateProduct() {
