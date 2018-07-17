@@ -49,7 +49,30 @@ $('#btnDelete').click(function() {
 
 $(document).ready(function() {
     findAllProducts();
+    checkHref();
 });
+
+function checkHref() {
+    var query = window.location.search.substring(1);
+    if (query !== "") {
+        var productId = query.substr(3);
+        console.log(productId);
+        findProductById(productId);
+    } else {
+        return 0;
+    }
+}
+
+function fillFormWithProduct(data) {
+    var inputs = Array.prototype.slice.call(document.querySelectorAll('form input'));
+
+        Object.keys(data).map(function (dataItem) {
+          inputs.map(function (inputItem) {
+            return (inputItem.name === dataItem) ? (inputItem.value = data[dataItem]) : false;
+          });
+        });
+    
+}
 
 function findAllProducts() {
     console.log('findAllProducts');
@@ -68,7 +91,7 @@ function findAllProducts() {
 
 function addArtikelenToList(artikelen) {
     $.each(artikelen, function(index, artikel) {
-        $("#artikelen").append("<li> <a href=./id=" + artikel.id + ">" + artikel.name + "</a></li>"); 
+        $("#artikelen").append("<li> <a href=./product.jsp?id=" + artikel.id + ">" + artikel.name + "</a></li>"); 
     });
 }
 
@@ -79,6 +102,21 @@ function findProductByName(searchKey) {
 		url: rootURL + '/search/' + searchKey,
 		dataType: "json",
 		success: renderList 
+	});
+}
+
+function findProductById(searchKey) {
+	console.log('findProductById: ' + searchKey);
+	$.ajax({
+		type: 'GET',
+		url: rootURL + '/product/' + searchKey,
+		dataType: "json",
+		error: function() {
+                    console.log("Error");
+                },
+                success: function(data) {
+                    fillFormWithProduct(data);
+                } 
 	});
 }
 
@@ -125,14 +163,14 @@ function updateProduct() {
 	$.ajax({
 		type: 'PUT',
 		contentType: 'application/json',
-		url: rootURL + '/' + $('#productId').val(),
+		url: rootURL + '/product/' + $('#productId').val(),
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
-			alert('Product updated successfully');
+                    alert('Product updated successfully');
 		},
 		error: function(jqXHR, textStatus, errorThrown){
-			alert('updateProduct error: ' + textStatus);
+                    alert('updateProduct error: ' + textStatus);
 		}
 	});
 }

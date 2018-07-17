@@ -26,7 +26,8 @@ import javax.servlet.http.HttpServletResponse;
                         "/purchase",
                         "/chooseLanguage",
                         "/login",
-                        "/logout"})
+                        "/logout",
+                        "/product"})
 public class ControllerServlet extends HttpServlet {
 
     /**
