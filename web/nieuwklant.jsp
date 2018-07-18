@@ -29,7 +29,7 @@
             <div class="form-group">
                 <div class="col-lg-4">
                     <label for="lastNamePrefix">Toevoegsel</label>
-                    <input type="text" id="lastNamePrefix" class="lastNamePrefix"  />
+                    <input type="text" name="lastNamePerfix" id="lastNamePrefix" class="form-control"  />
                 </div>
             </div>
             <div class="form-group">
@@ -40,37 +40,16 @@
             </div>
             <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
-        <script>
-            /**
-            $(document).ready(function() {
-                $("button").click(function() {
-                    var formData = {
-                                        "firstName": $("#voornaam").val(),
-                                        "lastName": $("#achternaam").val(),
-                                        "email": $("#email").val()
-                                    }
-                    var formDataJson = JSON.stringify(formData);
-                    console.log(formDataJson);
-                    $.post("http://localhost:8080/Appikaasie/REST/customer",formDataJson);
-                });
-            })*/                             
+        <script>          
             $(document).ready(function(){
                 // click on button submit
                $("#form").submit(function(e) {
-                    
-                    /**          
-                    var data = {
-                                        "firstName": $("#firstName").val(),
-                                        "lastName": $("#lastName").val(),
-                                        "email": $("#email").val()
-                                }*/
-                    
                     var frm = $("#form");
                     var data = {};
                     $.each(this, function(i, v) {
                         var input = $(v);
                         data[input.attr("name")] = input.val();
-                        delete data["undefined"];
+                        //delete data["undefined"];
                     })
                     
                     $.ajax({
