@@ -15,32 +15,32 @@
         <form id="form" class="form-signin">
             <h2 class="form-signin-heading">Invullen:</h2>
             <div class="form-group">
-                <div class="col-lg-4">
+                <div class="row">
                     <label for="firstName">Voornaam</label>
                     <input type="text" name="firstName" id="firstName" class="form-control"  />
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-4">
+                <div class="row">
                     <label for="lastName">Achternaam</label>
                     <input type="text" name="lastName" id="lastName" class="form-control"  />
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-4">
+                <div class="row">
                     <label for="lastNamePrefix">Toevoegsel</label>
                     <input type="text" name="lastNamePerfix" id="lastNamePrefix" class="form-control"  />
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-4">
+                <div class="row">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" class="form-control"  />
                 </div>
             </div>
             <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
-        <script>          
+        <script> 
             $(document).ready(function(){
                 // click on button submit
                $("#form").submit(function(e) {
@@ -49,8 +49,8 @@
                     $.each(this, function(i, v) {
                         var input = $(v);
                         data[input.attr("name")] = input.val();
-                        //delete data["undefined"];
-                    })
+                        delete data["undefined"];
+                    }),
                     
                     $.ajax({
                         
@@ -68,7 +68,7 @@
                         
                     });
                 });
-            });
+            })
         </script>
     </body>
 </html>

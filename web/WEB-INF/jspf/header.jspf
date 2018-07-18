@@ -5,14 +5,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-        <!-- jQuery library -->
         <script src="js/jquery-3.3.1.min.js"></script>
-        <!-- Popper JS -->
+        <script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-        <!-- Latest compiled JavaScript -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/css/tabulator.min.css" rel="stylesheet">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/js/tabulator.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <!-- By us maked files -->
         <script src="js/main.js"></script>
@@ -20,7 +18,7 @@
         <title>Applikaasie 3</title>
     </head>
     <body>
-        
+    
         <nav class="navbar navbar-expand-sm bg-light">
             <a class="navbar-brand" href="#">Logo</a>
             <ul class="navbar-nav">
