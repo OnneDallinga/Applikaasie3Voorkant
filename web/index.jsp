@@ -14,7 +14,7 @@
         <div id="main">
             <div id="indexLeftColumn">
                 <a href="nieuwklant.jsp">to page nieuwklant</a>
-                <a href="product.jsp">to page product</a>
+                <a href="productOverzicht.jsp">to page productOverzicht</a>
                 <a href="klantOverzicht.jsp">to page klantOverzicht</a>
                 <div id="welcomeText">
                     <p>[ welcome text ]</p>

@@ -1,7 +1,7 @@
 var rootURL = "http://localhost:8080/Appikaasie/REST";
 
 $(document).ready(function() {
-    findAllProducts();
+//    findAllProducts();
     checkHref();
 });
 
@@ -40,30 +40,30 @@ function fillFormWithProduct(data) {
     
 }
 
-function findAllProducts() {
-    console.log('findAllProducts');
-	$.ajax({
-		type: 'GET',
-		url: rootURL + "/product",
-		dataType: "json", // data type of response
-		error: function() {
-                    console.log("Error");
-                },
-                success: function(data) {
-                    addArtikelenToList(data);
-                }
-	});
-}
+//function findAllProducts() {
+//    console.log('findAllProducts');
+//	$.ajax({
+//		type: 'GET',
+//		url: rootURL + "/product",
+//		dataType: "json", // data type of response
+//		error: function() {
+//                    console.log("Error");
+//                },
+//                success: function(data) {
+//                    addArtikelenToList(data);
+//                }
+//	});
+//}
 
-function addArtikelenToList(artikelen) {
-    var node = document.getElementById("artikelen");
-    while (node.firstChild) {
-        node.removeChild(node.firstChild);
-    }
-    $.each(artikelen, function(index, artikel) {
-        $("#artikelen").append("<li> <a href=./product.jsp?id=" + artikel.id + ">" + artikel.name + "</a></li>"); 
-    });
-}
+//function addArtikelenToList(artikelen) {
+//    var node = document.getElementById("artikelen");
+//    while (node.firstChild) {
+//        node.removeChild(node.firstChild);
+//    }
+//    $.each(artikelen, function(index, artikel) {
+//        $("#artikelen").append("<li> <a href=./product.jsp?id=" + artikel.id + ">" + artikel.name + "</a></li>"); 
+//    });
+//}
 
 function findProductByName(searchKey) {
 	console.log('findProductByName: ' + searchKey);
@@ -127,7 +127,7 @@ function addProduct() {
 			alert('addProduct error: ' + textStatus);
 		}
 	});
-        findAllProducts();
+//        findAllProducts();
         
 }
 
@@ -146,7 +146,7 @@ function updateProduct() {
                     alert('updateProduct error: ' + textStatus);
 		}
 	});
-    findAllProducts();
+//    findAllProducts();
     checkHref();    
 }
 
@@ -154,7 +154,7 @@ function deleteProduct() {
 	console.log('deleteProduct');
 	$.ajax({
 		type: 'DELETE',
-		url: rootURL + '/' + $('#productId').val(),
+		url: rootURL + '/product/' + $('#productId').val(),
 		success: function(data, textStatus, jqXHR){
 			alert('Product deleted successfully');
 		},
@@ -163,3 +163,4 @@ function deleteProduct() {
 		}
 	});
 }
+
