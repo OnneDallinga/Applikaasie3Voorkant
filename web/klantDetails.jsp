@@ -1,0 +1,43 @@
+<%-- 
+    Document   : klantDetails
+    Created on : Jul 19, 2018, 10:40:49 AM
+    Author     : marko
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <!--<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>-->
+    <body>
+        <div class="container">
+            <div>
+                <h3>Klant info:</h3>
+                <p class="text-left">Voornaam: <b><span id="voornaam"></span></b></p>
+                <p class="text-left">Achternaam: <b><span id="achternaam"></span></b></p>
+                <p class="text-left">Toevoegsel: <b><span id="toevegsel"></span></b></p>
+                <p class="text-left">Email: <b><span id="email"></span></b></p>
+                <div class="btn-group align-left" >
+                    <button type="button" class="btn btn-primary" id="editProfile">Edit profile</button>
+                    <button type="button" class="btn btn-primary" id="adressen">Adressen bekijken</button>
+                    <button type="button" class="btn btn-primary" id="terug">Terug naar overzicht</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var pageUrl = window.location.search.substring(1);
+        var urlVariables = pageUrl.split('&');
+        for(var i = 0; i < urlVariables.length; i++) {
+            var urlVariable = urlVariables[i].split('=');
+            if(urlVariable[1] != "undefined") {
+                document.getElementById(urlVariable[0]).innerHTML = urlVariable[1];
+            } 
+        }
+        $("editProfile").click(function() {
+             window.open("editKlant.jsp?voornaam=" + voornaam + "&achternaam=" + achternaam + "&email=" + email + "&id=" + id, "_self");
+        })
+    </script>
+</html>

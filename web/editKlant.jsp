@@ -1,6 +1,6 @@
 <%-- 
-    Document   : nieuwklant
-    Created on : Jul 12, 2018, 12:10:35 PM
+    Document   : editKlant
+    Created on : Jul 19, 2018, 1:59:33 PM
     Author     : marko
 --%>
 
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--<script src="js/customerRegister.js"></script>-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
@@ -42,6 +42,7 @@
         </form>
         <script> 
             $(document).ready(function(){
+                
                $("#form").submit(function(e) {
                     var frm = $("#form");
                     var data = {};
@@ -50,11 +51,10 @@
                         data[input.attr("name")] = input.val();
                         delete data["undefined"];
                     }),
-                    $.ajax({
-                        
+                    $.ajax({ 
                         contentType: 'application/json',
-                        type: "post", 
-                        url: "http://localhost:8080/Appikaasie/REST/customer", 
+                        type: "put", 
+                        url: "http://localhost:8080/Appikaasie/REST/customer/" + id, 
                         dataType: 'json', 
                         data: JSON.stringify(data), 
                         success: function () {           

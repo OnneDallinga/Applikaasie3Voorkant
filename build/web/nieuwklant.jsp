@@ -42,7 +42,6 @@
         </form>
         <script> 
             $(document).ready(function(){
-                // click on button submit
                $("#form").submit(function(e) {
                     var frm = $("#form");
                     var data = {};
@@ -51,7 +50,6 @@
                         data[input.attr("name")] = input.val();
                         delete data["undefined"];
                     }),
-                    
                     $.ajax({
                         
                         contentType: 'application/json',
@@ -64,8 +62,7 @@
                         },
                         error: function () {
                             $(this).html("Error!");
-                        }
-                        
+                        }    
                     });
                 });
             })

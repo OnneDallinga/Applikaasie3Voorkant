@@ -12,45 +12,37 @@
         <title>JSP Page</title>
     </head>
     <body>
-      <div id="klantOverzicht"></div>
+        <div id="klantOverzicht"></div>
     </body>
     <script>
         var tabledata = [];
-       //create Tabulator on DOM element with id "example-table"
        $("#klantOverzicht").tabulator({
-            height:205, 
+            height:650, 
             layout:"fitColumns", 
             columns:[ //Define Table Columns
-                {title:"Voornaam", field:"voornaam", width:150},
+                {title:"Voornaam", field:"voornaam"},
                 {title:"Achternaam", field:"achternaam"},
+                {title:"Toevoegsel", field:"toevoegsel"},
                 {title:"Email", field:"email"},
+                {title:"Id", field:"id"}
             ],
-            rowClick:function(e, row){ //trigger an alert message when the row is clicked
-                alert("Row " + row.getData().id + " Clicked!!!!");
+            rowClick:function(e, row){ 
+                var voornaam = row.getData().voornaam;
+                var achternaam = row.getData().achternaam;
+                var toevoegsel = row.getData().toevoegsel;        
+                var email = row.getData().email;
+                var id = row.getData().id;
+                window.open("klantDetails.jsp?voornaam=" + voornaam + "&achternaam=" + achternaam + "&toevoegsel=" + toevoegsel +"&email=" + email + "&id=" + id, "_self");  
             },
         });
-        
         $.get("http://localhost:8080/Appikaasie/REST/customer", function(data,status) {
             console.log("status: " + status)    
             console.log("data: " + data);
             $.each(data, function(index, field) {
-                console.log(field.firstName);
-                var obj = {voornaam: field.firstName, achternaam: field.lastName, email: field.email}
+                var obj = {voornaam: field.firstName, achternaam: field.lastName, toevoegsel: field.toevoegsel, email: field.email, id: field.id}
                 tabledata.push(obj);
             });
             $("#klantOverzicht").tabulator("setData", tabledata);
         });
-        
-        
-        
-        //define some sample data
-    /**    
-    var tabledata = [
-            {voornaam:"marko", achternaam:"med", email:"medjedo@gmail.com"},
-            {voornaam:"filip", achternaam:"ved", email:"filip@gmail.com"},
-        ];*/
-
-        //load sample data into the table
-        
     </script>    
 </html>
