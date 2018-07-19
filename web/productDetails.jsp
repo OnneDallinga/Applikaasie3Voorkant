@@ -26,7 +26,7 @@
                 <input id="productId" name="id" type="text" disabled />
                 
                 <label>Status:</label>
-                <input id="productStatus" name="id" type="text" disabled />
+                <input id="productStatus" name="productStatus" type="text" disabled />
 
                 <label>Naam:</label>
                 <input type="text" id="name" name="name" required>

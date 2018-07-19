@@ -15,12 +15,72 @@ $('#btnSave').click(function() {
 });
 
 $('#btnActiveer').click(function() {
-	//TODO implementeer artikel activeren
+	productActiverenDeactiveren();
+        return false;
 });
 
 $('#btnDeactiveer').click(function() {
-	//TODO implementeer artikel deactiveren
+	productActiverenDeactiveren();
+        return false;
 });
+
+function productActiverenDeactiveren() {
+        if ($('#productStatus').val() === '0') {
+		
+                console.log('productActiveren');
+                $.ajax({
+                        type: 'PUT',
+                        contentType: 'application/json',
+                        url: rootURL + '/product/' + $('#productId').val(),
+                        dataType: "json",
+                        data: activeerProductJSON(),
+                        success: function(data, textStatus, jqXHR){
+                            console.log('Product activated successfully');
+                            location.reload(); 
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            alert('updateProduct error: ' + textStatus);
+                        }
+                });
+                
+        } else {
+		console.log('productDeactiveren');
+                $.ajax({
+                        type: 'PUT',
+                        contentType: 'application/json',
+                        url: rootURL + '/product/' + $('#productId').val(),
+                        dataType: "json",
+                        data: deactiveerProductJSON(),
+                        success: function(data, textStatus, jqXHR){
+                            console.log('Product deactivated successfully');
+                            location.reload(); 
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            alert('updateProduct error: ' + textStatus);
+                        }
+                });
+        }
+}
+
+function activeerProductJSON() {
+    return JSON.stringify({
+            "id": $('#productId').val(), 
+            "name": $('#name').val(), 
+            "price": $('#price').val(),
+            "stock": $('#stock').val(),
+            "productStatus": "1"
+    });
+}
+
+function deactiveerProductJSON() {
+    return JSON.stringify({
+            "id": $('#productId').val(), 
+            "name": $('#name').val(), 
+            "price": $('#price').val(),
+            "stock": $('#stock').val(),
+            "productStatus": "0"
+    });
+}
 
 //$('#btnDelete').click(function() {
 //	deleteProduct();
@@ -34,21 +94,21 @@ function showCorrectButton() {
     var deactiveerbutton = document.getElementById("btnDeactiveer");
     var productStatus = $('#productStatus').val();
     
-    if (productStatus !== null)
-        if (productStatus === 0)
-            deactiveerbutton.style.display = 'none';
-        else
+    if (productStatus !== null) {
+        if (productStatus == "0")
             activeerbutton.style.display = 'none';
-    else
+        else
+            deactiveerbutton.style.display = 'none';
+    } else {
         deactiveerbutton.style.display = 'none';
         activeerbutton.style.display = 'none';
+    }    
 }
 
 function checkHref() {
     var query = window.location.search.substring(1);
     if (query !== "") {
         var productId = query.substr(3);
-        console.log(productId);
         findProductById(productId);
     } else {
         return 0;
