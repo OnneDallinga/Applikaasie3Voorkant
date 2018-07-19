@@ -38,7 +38,8 @@
                 <input type="text" id="stock" name="stock" required/>
 
                 <button id="btnSave">Opslaan</button>
-                <button id="btnDelete">Verwijderen</button>
+                <button id="btnActiveer">Activeer</button>
+                <button id="btnDeactiveer">Deactiveer</button>
                 <button id="btnReset" type="reset" value="Reset">Reset</button>
 
             </div>

@@ -3,6 +3,7 @@ var rootURL = "http://localhost:8080/Appikaasie/REST";
 $(document).ready(function() {
 //    findAllProducts();
     checkHref();
+    showCorrectButton();
 });
 
 $('#btnSave').click(function() {
@@ -13,10 +14,35 @@ $('#btnSave').click(function() {
 	return false;
 });
 
-$('#btnDelete').click(function() {
-	deleteProduct();
-	return false;
+$('#btnActiveer').click(function() {
+	//TODO implementeer artikel activeren
 });
+
+$('#btnDeactiveer').click(function() {
+	//TODO implementeer artikel deactiveren
+});
+
+//$('#btnDelete').click(function() {
+//	deleteProduct();
+//	return false;
+//});
+
+//Laat de activerings- of deactiveringsknop zien afhankelijk van de productStatus
+//(een nieuw product/leeg formulier verstopt beide knoppen)
+function showCorrectButton() {    
+    var activeerbutton = document.getElementById("btnActiveer");
+    var deactiveerbutton = document.getElementById("btnDeactiveer");
+    var productStatus = $('#productStatus').val();
+    
+    if (productStatus !== null)
+        if (productStatus === 0)
+            deactiveerbutton.style.display = 'none';
+        else
+            activeerbutton.style.display = 'none';
+    else
+        deactiveerbutton.style.display = 'none';
+        activeerbutton.style.display = 'none';
+}
 
 function checkHref() {
     var query = window.location.search.substring(1);
