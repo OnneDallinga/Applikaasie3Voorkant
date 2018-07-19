@@ -90,18 +90,16 @@ function deactiveerProductJSON() {
 //Laat de activerings- of deactiveringsknop zien afhankelijk van de productStatus
 //(een nieuw product/leeg formulier verstopt beide knoppen)
 function showCorrectButton() {    
-    var activeerbutton = document.getElementById("btnActiveer");
-    var deactiveerbutton = document.getElementById("btnDeactiveer");
     var productStatus = $('#productStatus').val();
     
     if (productStatus !== null) {
         if (productStatus == "0")
-            activeerbutton.style.display = 'none';
+            $('#btnActiveer').hide();
         else
-            deactiveerbutton.style.display = 'none';
+            $('#btnDeactiveer').hide();
     } else {
-        deactiveerbutton.style.display = 'none';
-        activeerbutton.style.display = 'none';
+            $('#btnActiveer').hide();
+            $('#btnActiveer').hide();
     }    
 }
 
