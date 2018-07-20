@@ -18,6 +18,11 @@ $('#btnActiveer').click(function() {
         return false;
 });
 
+$('#btnReset').click(function() {
+	checkHref();
+        return false;
+});
+
 function productActiverenDeactiveren() {
         if ($('#productStatus').val() === '0') {
 		

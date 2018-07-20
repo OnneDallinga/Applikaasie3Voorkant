@@ -41,7 +41,7 @@
 
                 <button id="btnSave">Opslaan</button>
                 <button id="btnActiveer">Activeer/Deactiveer</button>
-                <button id="btnReset" type="reset" value="Reset">Reset</button>
+                <button id="btnReset">Reset</button>
 
             </div>
         </form>
