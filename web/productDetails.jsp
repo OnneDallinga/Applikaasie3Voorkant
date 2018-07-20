@@ -42,12 +42,8 @@
                 <button id="btnSave">Opslaan</button>
                 <button id="btnActiveer">Activeer/Deactiveer</button>
                 <button id="btnReset">Reset</button>
-
+                <button id="btnBack">Terug naar overzicht</button>
             </div>
         </form>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/product.js"></script>
-    </body>
-    
-
-</html>

@@ -23,6 +23,10 @@ $('#btnReset').click(function() {
         return false;
 });
 
+$('#btnBack').click(function() {
+           window.location = "productOverzicht.jsp";
+});
+
 function productActiverenDeactiveren() {
         if ($('#productStatus').val() === '0') {
 		

@@ -13,8 +13,12 @@
     </head>
     <body>
         <div id="productOverzicht"></div>
+        <button id="btnNieuwProduct">Product toevoegen</button>
     </body>
     <script>
+        $('#btnNieuwProduct').click(function() {
+           window.location = "productDetails.jsp";
+        });
         var tabledata = [];
        $("#productOverzicht").tabulator({
             height:650, 
@@ -32,7 +36,7 @@
                 var stock = row.getData().stock;        
                 var productStatus = row.getData().productStatus;
                 var id = row.getData().id;
-                window.open("productDetails.jsp?id=" + id);  
+                window.location = "productDetails.jsp?id=" + id;  
             },
         });
         $.get("http://localhost:8080/Appikaasie/REST/product", function(data,status) {
@@ -54,5 +58,5 @@
             $("#productOverzicht").tabulator("setData", tabledata);
         });
     </script>    
-</html>
+
 
