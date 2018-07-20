@@ -21,7 +21,7 @@
                 <p class="text-left">Email: <b><span id="email"></span></b></p>
                 <div class="btn-group align-left" >
                     <button type="button" class="btn btn-primary" id="editProfile">Edit profile</button>
-                    <button type="button" class="btn btn-primary" id="adressen">Adressen bekijken</button>
+                    <button type="button" class="btn btn-primary" id="adres">Adressen bekijken</button>
                     <button type="button" class="btn btn-primary" id="terug">Terug naar overzicht</button>
                 </div>
             </div>
@@ -45,6 +45,9 @@
             var toevoegsel = document.getElementById("toevoegsel").textContent;
             var email = document.getElementById("email").textContent;
             window.open("editKlant.jsp?voornaam=" + voornaam + "&achternaam=" + achternaam + "&toevoegsel=" + toevoegsel + "&email=" + email + "&id=" + id, "_self");
+        });
+        $("#adres").click(function() {
+            window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
         })
     </script>
 </html>

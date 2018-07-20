@@ -45,7 +45,6 @@
             </div>
             <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
-        <button type="button" class="btn btn-primary" id="terugNaarOverzicht">Terug naar klantenoverzicht</button>
     </body>
     <script>
         var id;
