@@ -45,20 +45,20 @@
             </div>
             <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
-        
+        <button type="button" class="btn btn-primary" id="terugNaarOverzicht">Terug naar klantenoverzicht</button>
     </body>
     <script>
         var id;
         var pageUrl = window.location.search.substring(1);
         var urlVariables = pageUrl.split('&');
+        var urlVariable;
         for(var i = 0; i < urlVariables.length; i++) {
-            var urlVariable = urlVariables[i].split('=');
+            urlVariable = urlVariables[i].split('=');
             if(urlVariable[1] != "undefined" || urlVariable[1] != null) {
                 document.getElementById(urlVariable[0]).value = urlVariable[1];
             } 
         }      
         $("#form").submit(function(e) {
-            var frm = $("#form");
             var data = {};
             var id;
             $.each(this, function(i, v) {
@@ -78,6 +78,9 @@
                 },
                 error: function () {
                     alert("er is iets misgegaan!");
+                },
+                complete: function () {
+                    window.location.assign("/Applikaasie3Voorkant/klantOverzicht.jsp");
                 }
             });
         });
