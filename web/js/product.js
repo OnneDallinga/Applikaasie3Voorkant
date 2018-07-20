@@ -3,7 +3,6 @@ var rootURL = "http://localhost:8080/Appikaasie/REST";
 $(document).ready(function() {
 //    findAllProducts();
     checkHref();
-    showCorrectButton();
 });
 
 $('#btnSave').click(function() {
@@ -15,11 +14,6 @@ $('#btnSave').click(function() {
 });
 
 $('#btnActiveer').click(function() {
-	productActiverenDeactiveren();
-        return false;
-});
-
-$('#btnDeactiveer').click(function() {
 	productActiverenDeactiveren();
         return false;
 });
@@ -89,19 +83,19 @@ function deactiveerProductJSON() {
 
 //Laat de activerings- of deactiveringsknop zien afhankelijk van de productStatus
 //(een nieuw product/leeg formulier verstopt beide knoppen)
-function showCorrectButton() {    
-    var productStatus = $('#productStatus').val();
-    
-    if (productStatus !== "") {
-        if (productStatus == "0")
-            $('#btnActiveer').hide();
-        else
-            $('#btnDeactiveer').hide();
-    } else {
-            $('#btnActiveer').hide();
-            $('#btnDeactiveer').hide();
-    }    
-}
+//function showCorrectButton() {    
+//    var productStatus = $('#productStatus').val();
+//    
+//    if (productStatus !== '') {
+//        if (productStatus == "0")
+//            $('#btnDeactiveer').hide();
+//        else
+//            $('#btnActiveer').hide();
+//    } else {
+//            $('#btnActiveer').hide();
+//            $('#btnDeactiveer').hide();
+//    }    
+//}
 
 function checkHref() {
     var query = window.location.search.substring(1);
@@ -189,7 +183,7 @@ function formToJSON() {
 		"name": $('#name').val(), 
                 "price": $('#price').val(),
                 "stock": $('#stock').val(),
-                "productStatus": $('productStatus').val()
+                "productStatus": "1"
 		});
 }
 
