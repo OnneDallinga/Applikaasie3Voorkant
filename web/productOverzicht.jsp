@@ -39,7 +39,16 @@
             console.log("status: " + status)    
             console.log("data: " + data);
             $.each(data, function(index, field) {
-                var obj = {name: field.name, price: field.price, stock: field.stock, productStatus: field.productStatus, id: field.id}
+                var obj = {name: field.name, 
+                           price: field.price, 
+                           stock: field.stock, 
+                           productStatus: field.productStatus, 
+                           id: field.id}
+                console.log(obj.productStatus);
+                if (obj.productStatus == "0")
+                    obj.productStatus = "Inactief";
+                else
+                    obj.productStatus = "Actief";
                 tabledata.push(obj);
             });
             $("#productOverzicht").tabulator("setData", tabledata);
