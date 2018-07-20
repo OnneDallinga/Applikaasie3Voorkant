@@ -38,31 +38,35 @@
                     <input type="email" name="email" id="email" class="form-control"  />
                 </div>
             </div>
+            <div class="form-group">
+                <div class="row">
+                    <input type="hidden" name="id" id="id" class="form-control"  />
+                </div>
+            </div>
             <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
         
     </body>
-    <script> 
+    <script>
         var id;
         var pageUrl = window.location.search.substring(1);
         var urlVariables = pageUrl.split('&');
         for(var i = 0; i < urlVariables.length; i++) {
             var urlVariable = urlVariables[i].split('=');
-            if(urlVariable[0] == "id") {
-                id = urlVariable[1]
-            }else if(urlVariable[1] != "undefined" || urlVariable[1] != null) {
+            if(urlVariable[1] != "undefined" || urlVariable[1] != null) {
                 document.getElementById(urlVariable[0]).value = urlVariable[1];
             } 
-        }
-               
+        }      
         $("#form").submit(function(e) {
             var frm = $("#form");
             var data = {};
+            var id;
             $.each(this, function(i, v) {
                 var input = $(v);
                 data[input.attr("name")] = input.val();
                 delete data["undefined"];
-            }),
+            });
+            id = data.id;
             $.ajax({ 
                 contentType: 'application/json',
                 type: "put", 
@@ -70,11 +74,11 @@
                 dataType: 'json', 
                 data: JSON.stringify(data), 
                 success: function () {           
-                    location.window.href = "klantOverzicht.jsp";
+                    alert("gewjzigd met succes!");
                 },
                 error: function () {
-                    $("#message").html("Error!");
-                }    
+                    alert("er is iets misgegaan!");
+                }
             });
         });
     </script>
