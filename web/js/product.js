@@ -92,14 +92,14 @@ function deactiveerProductJSON() {
 function showCorrectButton() {    
     var productStatus = $('#productStatus').val();
     
-    if (productStatus !== null) {
+    if (productStatus !== "") {
         if (productStatus == "0")
             $('#btnActiveer').hide();
         else
             $('#btnDeactiveer').hide();
     } else {
             $('#btnActiveer').hide();
-            $('#btnActiveer').hide();
+            $('#btnDeactiveer').hide();
     }    
 }
 
