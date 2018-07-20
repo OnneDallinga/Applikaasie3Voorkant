@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="css/applikaasie.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/css/tabulator.min.css" rel="stylesheet">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/js/tabulator.min.js"></script>
-        <title>Producten overzicht</title>
+        <title>Product Details</title>
     </head>
     <body>
 
