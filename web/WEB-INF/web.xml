@@ -29,6 +29,7 @@
             <url-pattern>/editKlant.jsp</url-pattern>
             <url-pattern>/bestellingOverzicht.jsp</url-pattern>
             <url-pattern>/bestellingDetails.jsp</url-pattern>
+            <url-pattern>/bestellingsItemDetails.jsp</url-pattern>
             <url-pattern>/productOverzicht.jsp</url-pattern>
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
             <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
