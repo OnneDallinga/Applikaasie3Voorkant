@@ -115,7 +115,11 @@ function fillFormWithProduct(data) {
             return (inputItem.name === dataItem) ? (inputItem.value = data[dataItem]) : false;
           });
         });
-    
+    if ($('#productStatus').val() === '0')
+            $('#productStatusText').val("Inactief");
+    else
+            $('#productStatusText').val("Actief");
+    return false;
 }
 
 //function findAllProducts() {
