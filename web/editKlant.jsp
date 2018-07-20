@@ -17,19 +17,19 @@
             <div class="form-group">
                 <div class="row">
                     <label for="firstName">Voornaam</label>
-                    <input type="text" name="firstName" id="firstName" class="form-control"  />
+                    <input type="text" name="firstName" id="voornaam" class="form-control"  />
                 </div>
             </div>
             <div class="form-group">
                 <div class="row">
                     <label for="lastName">Achternaam</label>
-                    <input type="text" name="lastName" id="lastName" class="form-control"  />
+                    <input type="text" name="lastName" id="achternaam" class="form-control"  />
                 </div>
             </div>
             <div class="form-group">
                 <div class="row">
                     <label for="lastNamePrefix">Toevoegsel</label>
-                    <input type="text" name="lastNamePerfix" id="lastNamePrefix" class="form-control"  />
+                    <input type="text" name="lastNamePerfix" id="toevoegsel" class="form-control"  />
                 </div>
             </div>
             <div class="form-group">
@@ -40,32 +40,43 @@
             </div>
             <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
-        <script> 
-            $(document).ready(function(){
-                
-               $("#form").submit(function(e) {
-                    var frm = $("#form");
-                    var data = {};
-                    $.each(this, function(i, v) {
-                        var input = $(v);
-                        data[input.attr("name")] = input.val();
-                        delete data["undefined"];
-                    }),
-                    $.ajax({ 
-                        contentType: 'application/json',
-                        type: "put", 
-                        url: "http://localhost:8080/Appikaasie/REST/customer/" + id, 
-                        dataType: 'json', 
-                        data: JSON.stringify(data), 
-                        success: function () {           
-                            $(this).html("Success!");
-                        },
-                        error: function () {
-                            $(this).html("Error!");
-                        }    
-                    });
-                });
-            })
-        </script>
+        
     </body>
+    <script> 
+        var id;
+        var pageUrl = window.location.search.substring(1);
+        var urlVariables = pageUrl.split('&');
+        for(var i = 0; i < urlVariables.length; i++) {
+            var urlVariable = urlVariables[i].split('=');
+            if(urlVariable[0] == "id") {
+                id = urlVariable[1]
+            }else if(urlVariable[1] != "undefined" || urlVariable[1] != null) {
+                document.getElementById(urlVariable[0]).value = urlVariable[1];
+            } 
+        }
+               
+        $("#form").submit(function(e) {
+            var frm = $("#form");
+            var data = {};
+            $.each(this, function(i, v) {
+                var input = $(v);
+                data[input.attr("name")] = input.val();
+                delete data["undefined"];
+            }),
+            $.ajax({ 
+                contentType: 'application/json',
+                type: "put", 
+                url: "http://localhost:8080/Appikaasie/REST/customer/" + id, 
+                dataType: 'json', 
+                data: JSON.stringify(data), 
+                success: function () {           
+                    location.window.href = "klantOverzicht.jsp";
+                },
+                error: function () {
+                    $("#message").html("Error!");
+                }    
+            });
+        });
+    </script>
+
 </html>

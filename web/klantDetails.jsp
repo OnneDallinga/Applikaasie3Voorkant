@@ -17,7 +17,7 @@
                 <h3>Klant info:</h3>
                 <p class="text-left">Voornaam: <b><span id="voornaam"></span></b></p>
                 <p class="text-left">Achternaam: <b><span id="achternaam"></span></b></p>
-                <p class="text-left">Toevoegsel: <b><span id="toevegsel"></span></b></p>
+                <p class="text-left">Toevoegsel: <b><span id="toevoegsel"></span></b></p>
                 <p class="text-left">Email: <b><span id="email"></span></b></p>
                 <div class="btn-group align-left" >
                     <button type="button" class="btn btn-primary" id="editProfile">Edit profile</button>
@@ -28,16 +28,23 @@
         </div>
     </body>
     <script>
+        var id;
         var pageUrl = window.location.search.substring(1);
         var urlVariables = pageUrl.split('&');
         for(var i = 0; i < urlVariables.length; i++) {
             var urlVariable = urlVariables[i].split('=');
-            if(urlVariable[1] != "undefined") {
+        if(urlVariable[0] == "id") {
+            id = urlVariable[1]
+        }else if(urlVariable[1] != "undefined") {
                 document.getElementById(urlVariable[0]).innerHTML = urlVariable[1];
             } 
         }
-        $("editProfile").click(function() {
-             window.open("editKlant.jsp?voornaam=" + voornaam + "&achternaam=" + achternaam + "&email=" + email + "&id=" + id, "_self");
+        $("#editProfile").click(function() {
+            var voornaam = document.getElementById("voornaam").textContent;
+            var achternaam = document.getElementById("achternaam").textContent;
+            var toevoegsel = document.getElementById("toevoegsel").textContent;
+            var email = document.getElementById("email").textContent;
+            window.open("editKlant.jsp?voornaam=" + voornaam + "&achternaam=" + achternaam + "&toevoegsel=" + toevoegsel + "&email=" + email + "&id=" + id, "_self");
         })
     </script>
 </html>
