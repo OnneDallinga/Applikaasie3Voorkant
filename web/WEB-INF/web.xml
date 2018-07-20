@@ -23,10 +23,13 @@
             <description>header and footer settings</description>
             <url-pattern>/index.jsp</url-pattern>
             <url-pattern>/nieuwklant.jsp</url-pattern>
-            <url-pattern>/product.jsp</url-pattern>
+            <url-pattern>/productDetails.jsp</url-pattern>
             <url-pattern>/klantOverzicht.jsp</url-pattern>
             <url-pattern>/klantDetails.jsp</url-pattern>
             <url-pattern>/editKlant.jsp</url-pattern>
+            <url-pattern>/bestellingOverzicht.jsp</url-pattern>
+            <url-pattern>/bestellingDetails.jsp</url-pattern>
+            <url-pattern>/productOverzicht.jsp</url-pattern>
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
             <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
         </jsp-property-group>

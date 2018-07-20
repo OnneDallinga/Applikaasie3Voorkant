@@ -1,8 +1,9 @@
 var rootURL = "http://localhost:8080/Appikaasie/REST";
 
 $(document).ready(function() {
-    findAllProducts();
+//    findAllProducts();
     checkHref();
+    showCorrectButton();
 });
 
 $('#btnSave').click(function() {
@@ -13,16 +14,99 @@ $('#btnSave').click(function() {
 	return false;
 });
 
-$('#btnDelete').click(function() {
-	deleteProduct();
-	return false;
+$('#btnActiveer').click(function() {
+	productActiverenDeactiveren();
+        return false;
 });
+
+$('#btnDeactiveer').click(function() {
+	productActiverenDeactiveren();
+        return false;
+});
+
+function productActiverenDeactiveren() {
+        if ($('#productStatus').val() === '0') {
+		
+                console.log('productActiveren');
+                $.ajax({
+                        type: 'PUT',
+                        contentType: 'application/json',
+                        url: rootURL + '/product/' + $('#productId').val(),
+                        dataType: "json",
+                        data: activeerProductJSON(),
+                        success: function(data, textStatus, jqXHR){
+                            console.log('Product activated successfully');
+                            location.reload(); 
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            alert('updateProduct error: ' + textStatus);
+                        }
+                });
+                
+        } else {
+		console.log('productDeactiveren');
+                $.ajax({
+                        type: 'PUT',
+                        contentType: 'application/json',
+                        url: rootURL + '/product/' + $('#productId').val(),
+                        dataType: "json",
+                        data: deactiveerProductJSON(),
+                        success: function(data, textStatus, jqXHR){
+                            console.log('Product deactivated successfully');
+                            location.reload(); 
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            alert('updateProduct error: ' + textStatus);
+                        }
+                });
+        }
+}
+
+function activeerProductJSON() {
+    return JSON.stringify({
+            "id": $('#productId').val(), 
+            "name": $('#name').val(), 
+            "price": $('#price').val(),
+            "stock": $('#stock').val(),
+            "productStatus": "1"
+    });
+}
+
+function deactiveerProductJSON() {
+    return JSON.stringify({
+            "id": $('#productId').val(), 
+            "name": $('#name').val(), 
+            "price": $('#price').val(),
+            "stock": $('#stock').val(),
+            "productStatus": "0"
+    });
+}
+
+//$('#btnDelete').click(function() {
+//	deleteProduct();
+//	return false;
+//});
+
+//Laat de activerings- of deactiveringsknop zien afhankelijk van de productStatus
+//(een nieuw product/leeg formulier verstopt beide knoppen)
+function showCorrectButton() {    
+    var productStatus = $('#productStatus').val();
+    
+    if (productStatus !== null) {
+        if (productStatus == "0")
+            $('#btnActiveer').hide();
+        else
+            $('#btnDeactiveer').hide();
+    } else {
+            $('#btnActiveer').hide();
+            $('#btnActiveer').hide();
+    }    
+}
 
 function checkHref() {
     var query = window.location.search.substring(1);
     if (query !== "") {
         var productId = query.substr(3);
-        console.log(productId);
         findProductById(productId);
     } else {
         return 0;
@@ -40,30 +124,30 @@ function fillFormWithProduct(data) {
     
 }
 
-function findAllProducts() {
-    console.log('findAllProducts');
-	$.ajax({
-		type: 'GET',
-		url: rootURL + "/product",
-		dataType: "json", // data type of response
-		error: function() {
-                    console.log("Error");
-                },
-                success: function(data) {
-                    addArtikelenToList(data);
-                }
-	});
-}
+//function findAllProducts() {
+//    console.log('findAllProducts');
+//	$.ajax({
+//		type: 'GET',
+//		url: rootURL + "/product",
+//		dataType: "json", // data type of response
+//		error: function() {
+//                    console.log("Error");
+//                },
+//                success: function(data) {
+//                    addArtikelenToList(data);
+//                }
+//	});
+//}
 
-function addArtikelenToList(artikelen) {
-    var node = document.getElementById("artikelen");
-    while (node.firstChild) {
-        node.removeChild(node.firstChild);
-    }
-    $.each(artikelen, function(index, artikel) {
-        $("#artikelen").append("<li> <a href=./product.jsp?id=" + artikel.id + ">" + artikel.name + "</a></li>"); 
-    });
-}
+//function addArtikelenToList(artikelen) {
+//    var node = document.getElementById("artikelen");
+//    while (node.firstChild) {
+//        node.removeChild(node.firstChild);
+//    }
+//    $.each(artikelen, function(index, artikel) {
+//        $("#artikelen").append("<li> <a href=./product.jsp?id=" + artikel.id + ">" + artikel.name + "</a></li>"); 
+//    });
+//}
 
 function findProductByName(searchKey) {
 	console.log('findProductByName: ' + searchKey);
@@ -127,7 +211,7 @@ function addProduct() {
 			alert('addProduct error: ' + textStatus);
 		}
 	});
-        findAllProducts();
+//        findAllProducts();
         
 }
 
@@ -146,7 +230,7 @@ function updateProduct() {
                     alert('updateProduct error: ' + textStatus);
 		}
 	});
-    findAllProducts();
+//    findAllProducts();
     checkHref();    
 }
 
@@ -154,7 +238,7 @@ function deleteProduct() {
 	console.log('deleteProduct');
 	$.ajax({
 		type: 'DELETE',
-		url: rootURL + '/' + $('#productId').val(),
+		url: rootURL + '/product/' + $('#productId').val(),
 		success: function(data, textStatus, jqXHR){
 			alert('Product deleted successfully');
 		},
@@ -163,3 +247,4 @@ function deleteProduct() {
 		}
 	});
 }
+
