@@ -38,34 +38,46 @@
                     <input type="email" name="email" id="email" class="form-control"  />
                 </div>
             </div>
-            <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
+            <input id="klantId" name="klantId" type="text" disabled hidden />
+            <button id="btnAddKlant" class="btn btn-primary btn-lg">Submit</button>
         </form>
+        
         <script> 
-            $(document).ready(function(){
-               $("#form").submit(function(e) {
-                    var frm = $("#form");
-                    var data = {};
-                    $.each(this, function(i, v) {
-                        var input = $(v);
-                        data[input.attr("name")] = input.val();
-                        delete data["undefined"];
-                    }),
-                    $.ajax({
-                        
-                        contentType: 'application/json',
-                        type: "post", 
-                        url: "http://localhost:8080/Appikaasie/REST/customer", 
-                        dataType: 'json', 
-                        data: JSON.stringify(data), 
-                        success: function () {           
-                            $(this).html("Success!");
-                        },
-                        error: function () {
-                            $(this).html("Error!");
-                        }    
-                    });
-                });
-            })
+        
+        $('#btnAddKlant').click(function() {
+            console.log('buttonClicked');
+            addKlant();
+            return false;
+        });
+        
+        function addKlant() {
+            console.log('addKlant');
+        
+            $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json',
+                    url: "http://localhost:8080/Appikaasie/REST/customer",
+                    dataType: "json",
+                    data: formToJSON(),
+                    success: function(data, textStatus, jqXHR){
+                            alert('Klant correct ingevoegd');
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                            alert('Fout: ' + textStatus);
+                    }
+            });
+        }
+        
+        function formToJSON() {
+            console.log('formToJSON');
+            var klantId = $('#klantId').val();
+            return JSON.stringify({
+                    "id": klantId == "" ? null : klantId, 
+                    "firstName": $('#firstName').val(), 
+                    "lastName": $('#lastName').val(),
+                    "lastNamePrefix": $('#lastNamePrefix').val(),
+                    "email": $('#email').val()
+            });
+        }
+
         </script>
-    </body>
-</html>
