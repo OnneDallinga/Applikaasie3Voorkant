@@ -14,15 +14,16 @@
     <body>
         <div id="adresOverzicht"></div>
         <div class="btn-group">
-            <button type="button" id="toevoegen" class="btn btn-primary">Toevoegen adress</button>
-            <button type="button" class="btn btn-primary">Samsung</button>
-            <button type="button" class="btn btn-primary">Sony</button>
+            <button type="button" id="addressToevoegen" class="btn btn-primary">Toevoegen adress</button>
+            <button type="button" class="btn btn-primary">Terug naar klant overzicht</button>
         </div>
     </body>
     <script>
         var tabledata = [];
+        var pageUrl = window.location.search.substring(1);
+        var customerId = findCustomerId(pageUrl);
        $("#adresOverzicht").tabulator({
-            height:650, 
+            height: 150, 
             layout:"fitColumns", 
             columns:[ //Define Table Columns
                 {title:"AdresType", field:"adrestype"},
@@ -30,7 +31,7 @@
                 {title:"Nummer", field:"nummer"},
                 {title:"Postcode", field:"postcode"},
                 {title:"Stad", field:"stad"},
-                {title:"KlantId", field:"klantid"}
+                {title:"KlantId", field:"klantid"},
                 {title:"Id", field:"id"}
             ],
             rowClick:function(e, row){ 
@@ -41,7 +42,7 @@
                 var stad = row.getData().stad;
                 var klantid = row.getData().klantid;
                 var id = row.getData().id;
-                window.open("klantDetails.jsp?adrestype=" + adrestype + "&straatnaam=" + straatnaam + "&nummer=" + nummer +"&postcode=" + postcode + "&stad=" + stad + "&klantid=" + klantid + "&id=" + id, "_self");  
+                window.open("adresDetails.jsp?adrestype=" + adrestype + "&straatnaam=" + straatnaam + "&nummer=" + nummer +"&postcode=" + postcode + "&stad=" + stad + "&klantid=" + klantid + "&id=" + id, "_self");  
             },
         });
         $.get("http://localhost:8080/Appikaasie/REST/customer", function(data,status) {
@@ -51,8 +52,18 @@
             });
             $("#adresOverzicht").tabulator("setData", tabledata);
         });
-        $("#toevoegen").click(function() {
-            window.open("adresFormulier.jsp");
-        }) 
+        $("#addressToevoegen").click(function() {
+            window.open("adresFormulier.jsp?customerId=" + customerId, "_self");
+        });
+        function findCustomerId(pageUrl) {
+            var urlVariables = pageUrl.split('&');
+            for(var i = 0; i < urlVariables.length; i++) {
+                var urlVariable = urlVariables[i].split('=');
+                if (urlVariable[0] == "customerId") {
+                    return urlVariable[1];
+                }
+            }
+            return "undefined";
+        }
     </script>    
 </html>
