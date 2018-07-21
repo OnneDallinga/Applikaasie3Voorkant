@@ -69,11 +69,6 @@
                         data[input.attr("name")] = input.val();
                         delete data["undefined"];
                     });
-                    /**
-                    if(checkAdres(data.addresType, customerId)) {
-                        alert("Adres type: " + data.addresType + " is al aanwezig");
-                        window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
-                    };*/
                     data.customerId = customerObj;
                     $.ajax({    
                         contentType: 'application/json',
@@ -83,9 +78,12 @@
                         data: JSON.stringify(data), 
                         success: function () {           
                             alert("Adres opgeslagen!");
+                            doAjaxForCostumer(data);
                         },
                         error: function () {
                             alert("Er is iets misgegaan!");
+                            doAjaxForCostumer(data);
+
                         },
                         complete: function () {
                             window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
@@ -102,17 +100,25 @@
                     }
                     return "undefined";
                 }
-                /**
-                function checkAdres(addressType, costumerId) {
-                    $.get("http://localhost:8080/Appikaasie/REST/customer", function(data,status) {
-                        $.each(data, function(index, field) {
-                            if(field.customerId == customerId || field.addressType == addressType) {
-                               return true;
-                            }
-                        });
+                function doAjaxForCostumer(data) {
+                    customerObj.addressCollection.put(data);
+                    $.ajax({    
+                        contentType: 'application/json',
+                        type: "put", 
+                        url: "http://localhost:8080/Appikaasie/REST/customer/" + customerId, 
+                        dataType: 'json', 
+                        data: JSON.stringify(data), 
+                        success: function () {           
+                            alert("gewjzigd met succes!");
+                        },
+                        error: function () {
+                            alert("er is iets misgegaan!");
+                        },
+                        complete: function () {
+                            window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
+                        }
                     });
-                    return false;
-                };*/
+                }
             });
         </script>
     </body>

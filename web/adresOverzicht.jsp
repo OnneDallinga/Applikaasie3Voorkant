@@ -45,7 +45,7 @@
                 window.open("adresDetails.jsp?adrestype=" + adrestype + "&straatnaam=" + straatnaam + "&nummer=" + nummer +"&postcode=" + postcode + "&stad=" + stad + "&klantid=" + klantid + "&id=" + id, "_self");  
             },
         });
-        $.get("http://localhost:8080/Appikaasie/REST/address", function(data,status) {
+        $.get("http://localhost:8080/Appikaasie/REST/customer", function(data,status) {
             $.each(data, function(index, field) {
                 if(field.customerId == customerId) {
                     var obj = {adrestype: field.addressType, straatnaam: field.streetname, nummer: field.number, postcode: field.postalcode, stad: field.city, klantid: field.customerId, id: field.id}
