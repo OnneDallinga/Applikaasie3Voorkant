@@ -16,6 +16,7 @@
                 <a href="nieuwklant.jsp">to page nieuwklant</a>
                 <a href="productOverzicht.jsp">to page productOverzicht</a>
                 <a href="klantOverzicht.jsp">to page klantOverzicht</a>
+                <a href="bestellingOverzicht.jsp">Naar Bestellingenpagina</a>
                 <div id="welcomeText">
                     <p>[ welcome text ]</p>
                 </div>
