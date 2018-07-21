@@ -15,24 +15,47 @@
 
         
 
-        <form id="orderForm">
-            <div class="mainArea">
-                <%--  add/edit product here --%>
-
-                <label>Id:</label>
-                <input id="bestellingId" name="id" type="text" disabled />
-                
-                <label>Geplaatst op:</label>
-                <input id="dateTime" name="dateTime" type="text" disabled />
-
-                <label>Klant:</label>
-                <input type="text" id="klantId" name="klantId" disabled>
-
-                <label>Totaalprijs:</label>
-                <input type="text" id="totalPrice" name="totalPrice" disabled/>
-
-                <label>Status</label>
-                <input type="text" id="orderStatus" name="orderStatus" disabled/>
+        <form id="orderForm" class="form-signin"> 
+            <div class="mainArea"> 
+                <%--  add/edit product here --%> 
+ 
+                <div class="form-group"> 
+                <div class="row"> 
+                <label>Id:</label> 
+                <input id="bestellingId" name="id" type="text" disabled /> 
+                </div> 
+                </div> 
+                 
+                <div class="form-group"> 
+                <div class="row"> 
+                <label>Geplaatst op:</label> 
+                <input id="dateTime" name="dateTime" type="text" disabled /> 
+                </div> 
+                </div> 
+ 
+                <div class="form-group"> 
+                <div class="row"> 
+                <label>Klant:</label> 
+                <input type="text" id="klantId" name="klantId" disabled> 
+                <select type="text" id="klantNaam" name="Klant" > 
+                    <option>Kies een klant</option>
+                </select> 
+                </div> 
+                </div> 
+ 
+                <div class="form-group"> 
+                <div class="row"> 
+                <label>Totaalprijs:</label> 
+                <input type="text" id="totalPrice" name="totalPrice" disabled/> 
+                </div> 
+                </div> 
+ 
+                <div class="form-group"> 
+                <div class="row"> 
+                <label>Status</label> 
+                <input type="text" id="orderStatus" name="orderStatus" disabled/> 
+                </div> 
+                </div> 
                 
                 <div id="bestellingsItemOverzicht"></div>
                 
@@ -74,4 +97,5 @@
                 });
             </script>
     </body>
+    
 </html>
