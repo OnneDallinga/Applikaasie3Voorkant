@@ -44,8 +44,7 @@
                            order_status: field.order_status, 
                            total_price: field.total_price, 
                            customer_id: field.customer_id, 
-                           id: field.id,
-                           customer[0].last_name: field.customer_id_last_name}
+                           id: field.id}
                 tabledata.push(obj);
             });
             $("#bestellingOverzicht").tabulator("setData", tabledata);
