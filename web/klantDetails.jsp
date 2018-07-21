@@ -47,7 +47,7 @@
             window.open("editKlant.jsp?voornaam=" + voornaam + "&achternaam=" + achternaam + "&toevoegsel=" + toevoegsel + "&email=" + email + "&id=" + id, "_self");
         });
         $("#adres").click(function() {
-            window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
-        })
+            window.open("adresOverzicht.jsp?customerId=" + id, "_self");
+        });
     </script>
 </html>
