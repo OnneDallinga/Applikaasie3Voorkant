@@ -9,9 +9,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/applikaasie.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/css/tabulator.min.css" rel="stylesheet">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/js/tabulator.min.js"></script>
         <title>Bestelling Details</title>
     </head>
     <body>
@@ -44,10 +41,9 @@
                 <button id="btnReset" type="reset" value="Reset">Reset</button>
             </div>
         </form>
-        <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/bestelling.js"></script>
         <script>
-                var tabledata = [];
+               var tabledata = [];
                $("#bestellingsItemOverzicht").tabulator({
                     height:650, 
                     layout:"fitColumns", 
@@ -78,6 +74,4 @@
                 });
             </script>
     </body>
-    
-
 </html>
