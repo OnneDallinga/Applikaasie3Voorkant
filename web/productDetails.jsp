@@ -18,31 +18,43 @@
 
         
 
-        <form id="productForm">
+        <form id="productForm" class="form-signin">
             <div class="mainArea">
+            <div class="form-group">
                 <%--  add/edit product here --%>
 
-                <label>Id:</label>
-                <input id="productId" name="id" type="text" disabled />
+                <div class="row">
+                    <label>Id:</label>
+                    <input id="productId" name="id" type="text" disabled />
+                </div>
                 
-                <label>Status:</label>
-                <input id="productStatusText" name="productStatusText" type="text" disabled />
+                <div class="row">
+                    <label>Status:</label>
+                    <input id="productStatusText" name="productStatusText" type="text" disabled />
+                </div>    
 
                 <input id="productStatus" name="productStatus" type="hidden" disabled />
 
-                <label>Naam:</label>
-                <input type="text" id="name" name="name" required>
+                <div class="row">
+                    <label>Naam:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-                <label>Prijs:</label>
-                <input type="text" id="price" name="price" required/>
+                <div class="row">
+                    <label>Prijs:</label>
+                    <input type="text" id="price" name="price" required/>
+                </div>
 
-                <label>Voorraad:</label>
-                <input type="text" id="stock" name="stock" required/>
+                <div class="row">
+                    <label>Voorraad:</label>
+                    <input type="text" id="stock" name="stock" required/>
+                </div>
 
-                <button id="btnSave">Opslaan</button>
-                <button id="btnActiveer">Activeer/Deactiveer</button>
-                <button id="btnReset">Reset</button>
-                <button id="btnBack">Terug naar overzicht</button>
+                <button id="btnSave" class="btn btn-primary btn-lg">Opslaan</button>
+                <button id="btnActiveer" class="btn btn-primary btn-lg">Activeer/Deactiveer</button>
+                <button id="btnReset" class="btn btn-primary btn-lg">Reset</button>
+                <button id="btnBack" class="btn btn-primary btn-lg">Terug naar overzicht</button>
+            </div>
             </div>
         </form>
         <script src="js/jquery-3.3.1.min.js"></script>
