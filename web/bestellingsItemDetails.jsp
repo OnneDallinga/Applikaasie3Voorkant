@@ -37,9 +37,9 @@
                 <label>Id:</label>
                 <input type="text" id="id" name="id" disabled/>
 
-                <button id="btnSave">Opslaan</button>
-                <button id="btnDelete">Verwijderen</button>
-                <button id="btnReset" type="reset" value="Reset">Reset</button>
+                <button id="btnSave" class="btn btn-primary btn-lg" type="button">Opslaan</button>
+                <button id="btnDelete" class="btn btn-primary btn-lg" type="button">Verwijderen</button>
+                <button id="btnReset" class="btn btn-primary btn-lg"type="reset" value="Reset">Reset</button>
 
             </div>
         </form>

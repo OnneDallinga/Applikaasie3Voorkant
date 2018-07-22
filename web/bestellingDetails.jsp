@@ -60,17 +60,19 @@
                 </div> 
                 </div> 
                 
-                <button id="btnNieuweBestelRegel" class="btn btn-primary btn-lg">Product(en) toevoegen</button>
-                <button id="btnSave" class="btn btn-primary btn-lg">Opslaan</button>
-                <button id="btnDelete" class="btn btn-primary btn-lg">Verwijderen</button>
+                <button id="btnNieuweBestelRegel" class="btn btn-primary btn-lg" type="button">Product(en) toevoegen</button>
+                <button id="btnSave" class="btn btn-primary btn-lg" type="button">Opslaan</button>
+                <button id="btnDelete" class="btn btn-primary btn-lg" type="button">Verwijderen</button>
                 <button id="btnReset" type="reset" value="Reset" class="btn btn-primary btn-lg">Reset</button>
             </div>
         </form>
         <script src="js/bestelling.js"></script>
         <script>
-                $('#bbtnNieuweBestelRegel').click(function() {
-                           var order_id = $('#bestellingId').val();
-                           window.location = "bestellingsItemDetails.jsp?bestelling=" + order_id;
+                $('#btnNieuweBestelRegel').click(function() {
+//                           var order_id = $('#bestellingId').val();
+//                           window.location = "bestellingsItemDetails.jsp?bestelling=" + order_id;
+                            window.location = "bestellingsItemDetails.jsp";
+                          
                 });
                 
                var tabledata = [];

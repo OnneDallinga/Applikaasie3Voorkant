@@ -13,7 +13,7 @@
     </head>
     <body>
         <div id="bestellingOverzicht"></div>
-        <button id="btnNieuweBestelling" class="btn btn-primary btn-lg">Nieuwe bestelling</button>
+        <button id="btnNieuweBestelling" class="btn btn-primary btn-lg" type="button">Nieuwe bestelling</button>
     </body>
     <script>
         $('#btnNieuweBestelling').click(function() {

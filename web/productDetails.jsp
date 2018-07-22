@@ -60,10 +60,10 @@
                 </div>
                 </div>
 
-                <button id="btnSave" class="btn btn-primary btn-lg">Opslaan</button>
-                <button id="btnActiveer" class="btn btn-primary btn-lg">Activeer/Deactiveer</button>
-                <button id="btnReset" class="btn btn-primary btn-lg">Reset</button>
-                <button id="btnBack" class="btn btn-primary btn-lg">Terug naar overzicht</button>
+                <button id="btnSave" class="btn btn-primary btn-lg" type="button">Opslaan</button>
+                <button id="btnActiveer" class="btn btn-primary btn-lg" type="button">Activeer/Deactiveer</button>
+                <button id="btnReset" class="btn btn-primary btn-lg" type="reset">Reset</button>
+                <button id="btnBack" class="btn btn-primary btn-lg" type="button">Terug naar overzicht</button>
             
             
         </form>
