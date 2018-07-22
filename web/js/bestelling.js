@@ -7,7 +7,7 @@
 $(document).ready(function() { 
     findAllKlanten(); 
 }); 
- 
+
 function findAllKlanten() { 
     console.log('findAllKlanten'); 
   $.ajax({ 

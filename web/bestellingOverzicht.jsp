@@ -13,8 +13,13 @@
     </head>
     <body>
         <div id="bestellingOverzicht"></div>
+        <button id="btnNieuweBestelling" class="btn btn-primary btn-lg">Nieuwe bestelling</button>
     </body>
     <script>
+        $('#btnNieuweBestelling').click(function() {
+                   window.location = "bestellingDetails.jsp";
+        });
+        
         var tabledata = [];
        $("#bestellingOverzicht").tabulator({
             height:650, 
