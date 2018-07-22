@@ -23,8 +23,13 @@ function findAllProducts() {
 } 
 
 function addProductenToDropdown(producten) { 
-    $.each(producten, function(index, product) { 
-        $("#productNaam").append("<option value='" + product.id +"' >" + product.name + "</option>"); 
+    $.each(producten, function(index, product) {
+        console.log("productStatus: " + product.productStatus);
+        if (product.productStatus !== 0) {
+            $("#productNaam").append("<option value='" + product.id +"' >" + product.name + "</option>");
+        } else {
+            console.log("Skipping inactive item");
+        }    
     }); 
     if ($('#productId').val() !== "") 
         select_option(); 
