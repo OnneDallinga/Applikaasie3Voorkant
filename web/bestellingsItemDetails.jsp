@@ -47,9 +47,9 @@
 
                 <input type="text" id="id" name="id" disabled hidden/>
 
-                <button id="btnSave" class="btn btn-primary btn-lg" type="button">Opslaan</button>
-                <button id="btnDelete" class="btn btn-primary btn-lg" type="button">Verwijderen</button>
-                <button id="btnReset" class="btn btn-primary btn-lg"type="reset" value="Reset">Reset</button>
+                <button id="btnSave" class="btn btn-primary btn-sm" type="button">Opslaan</button>
+                <button id="btnDelete" class="btn btn-primary btn-sm" type="button">Verwijderen</button>
+                <button id="btnReset" class="btn btn-primary btn-sm"type="reset" value="Reset">Reset</button>
 
             
         </form>

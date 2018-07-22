@@ -60,10 +60,10 @@
                 </div> 
                 </div> 
                 
-                <button id="btnNieuweBestelRegel" class="btn btn-primary btn-lg" type="button">Product(en) toevoegen</button>
-                <button id="btnSave" class="btn btn-primary btn-lg" type="button">Opslaan</button>
-                <button id="btnDelete" class="btn btn-primary btn-lg" type="button">Verwijderen</button>
-                <button id="btnReset" type="reset" value="Reset" class="btn btn-primary btn-lg">Reset</button>
+                <button id="btnNieuweBestelRegel" class="btn btn-primary btn-sm" type="button">Product(en) toevoegen</button>
+                <button id="btnSave" class="btn btn-primary btn-sm" type="button">Opslaan</button>
+                <button id="btnDelete" class="btn btn-primary btn-sm" type="button">Verwijderen</button>
+                <button id="btnReset" type="reset" value="Reset" class="btn btn-primary btn-sm">Reset</button>
             
         </form>
         <script src="js/bestelling.js"></script>
