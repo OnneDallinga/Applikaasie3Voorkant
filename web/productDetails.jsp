@@ -29,30 +29,30 @@
                 <div class="form-group">
                 <div class="row">
                     <label>Status:</label>
-                    <input id="productStatusText" name="productStatusText" type="text" disabled />
+                    <input id="productStatusText" name="productStatusText" type="text" disabled class="form-control"/>
                 </div> 
                 </div>
 
-                <input id="productStatus" name="productStatus" type="hidden" disabled />
+                <input id="productStatus" name="productStatus" type="hidden" disabled class="form-control"/>
 
                 <div class="form-group">
                 <div class="row">
                     <label>Naam:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required class="form-control">
                 </div>
                 </div>
 
                 <div class="form-group">
                 <div class="row">
                     <label>Prijs:</label>
-                    <input type="text" id="price" name="price" required/>
+                    <input type="text" id="price" name="price" required class="form-control"/>
                 </div>
                 </div>
 
                 <div class="form-group">
                 <div class="row">
                     <label>Voorraad:</label>
-                    <input type="text" id="stock" name="stock" required/>
+                    <input type="text" id="stock" name="stock" required class="form-control"/>
                 </div>
                 </div>
 

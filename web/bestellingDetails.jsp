@@ -16,7 +16,7 @@
         
 
         <form id="orderForm" class="form-signin"> 
-            <div class="mainArea"> 
+             
                 <%--  add/edit product here --%> 
  
                 
@@ -26,7 +26,7 @@
                 <div class="form-group"> 
                 <div class="row"> 
                 <label>Geplaatst op:</label> 
-                <input id="dateTime" name="dateTime" type="text" disabled /> 
+                <input id="dateTime" name="dateTime" type="text" disabled class="form-control"/> 
                 </div> 
                 </div> 
  
@@ -45,7 +45,7 @@
                 <div class="form-group"> 
                 <div class="row"> 
                 <label>Status</label> 
-                <input type="text" id="orderStatus" name="orderStatus" disabled/> 
+                <input type="text" id="orderStatus" name="orderStatus" disabled class="form-control"/> 
                 </div> 
                 </div> 
                 
@@ -56,7 +56,7 @@
                 <div class="form-group"> 
                 <div class="row"> 
                 <label>Totaalprijs:</label> 
-                <input type="text" id="totalPrice" name="totalPrice" disabled/> 
+                <input type="text" id="totalPrice" name="totalPrice" disabled class="form-control"/> 
                 </div> 
                 </div> 
                 
@@ -64,7 +64,7 @@
                 <button id="btnSave" class="btn btn-primary btn-lg" type="button">Opslaan</button>
                 <button id="btnDelete" class="btn btn-primary btn-lg" type="button">Verwijderen</button>
                 <button id="btnReset" type="reset" value="Reset" class="btn btn-primary btn-lg">Reset</button>
-            </div>
+            
         </form>
         <script src="js/bestelling.js"></script>
         <script>

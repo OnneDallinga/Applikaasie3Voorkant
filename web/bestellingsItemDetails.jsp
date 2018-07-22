@@ -18,30 +18,40 @@
 
         
 
-        <form id="orderItemForm">
-            <div class="mainArea">
+        <form id="orderItemForm" class="form-signin">
+            
                 <%--  add/edit product here --%>
 
+                <div class="form-group"> 
+                <div class="row">
                 <label>Product:</label>
-                <input id="product_id" name="product_id" type="text" required />
+                <input id="product_id" name="product_id" type="text" required class="form-control"/>
+                </div>
+                </div>    
                 
+                <div class="form-group"> 
+                <div class="row">
                 <label>Aantal:</label>
-                <input id="amount" name="amount" type="text" required />
+                <input id="amount" name="amount" type="text" required class="form-control"/>
+                </div>
+                </div> 
 
+                <div class="form-group"> 
+                <div class="row">
                 <label>Subtotaal:</label>
-                <input type="text" id="sub_total" name="sub_total" required>
+                <input type="text" id="sub_total" name="sub_total" required disabled class="form-control">
+                </div>
+                </div> 
 
-                <label>Order Id:</label>
-                <input type="text" id="order_id" name="order_id" disabled/>
+                <input type="text" id="order_id" name="order_id" disabled hidden/>
 
-                <label>Id:</label>
-                <input type="text" id="id" name="id" disabled/>
+                <input type="text" id="id" name="id" disabled hidden/>
 
                 <button id="btnSave" class="btn btn-primary btn-lg" type="button">Opslaan</button>
                 <button id="btnDelete" class="btn btn-primary btn-lg" type="button">Verwijderen</button>
                 <button id="btnReset" class="btn btn-primary btn-lg"type="reset" value="Reset">Reset</button>
 
-            </div>
+            
         </form>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/product.js"></script>
