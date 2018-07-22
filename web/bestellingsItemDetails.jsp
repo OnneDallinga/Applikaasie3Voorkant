@@ -23,10 +23,13 @@
                 <%--  add/edit product here --%>
 
                 <div class="form-group"> 
-                <div class="row">
-                <label>Product:</label>
-                <input id="product_id" name="product_id" type="text" required class="form-control"/>
-                </div>
+                <div class="row"> 
+                <label>Product:</label> 
+                <input type="text" id="productId" name="productId" disabled hidden> 
+                <select type="text" id="productNaam" name="product" > 
+                <option>Kies een product</option>
+                </select> 
+                </div> 
                 </div>    
                 
                 <div class="form-group"> 
@@ -54,7 +57,7 @@
             
         </form>
         <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/product.js"></script>
+        <script src="js/bestellingsitem.js"></script>
     </body>
     
 

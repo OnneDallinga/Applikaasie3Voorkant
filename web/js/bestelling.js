@@ -17,12 +17,12 @@ function findAllKlanten() {
     error: function() { 
                     console.log("Error"); 
                 }, 
-                success: function(data) { 
-                    addKlantnamenToDropdown(data); 
-                } 
+    success: function(data) { 
+        addKlantnamenToDropdown(data); 
+    } 
   }); 
 } 
- 
+
 function addKlantnamenToDropdown(klanten) { 
     $.each(klanten, function(index, klant) { 
         $("#klantNaam").append("<option value='" + klant.id +"' >" + klant.lastName +  
@@ -33,7 +33,7 @@ function addKlantnamenToDropdown(klanten) {
     else 
         return false; 
 } 
- 
+
 function select_option() { 
     return $('span#klantNaam select option[value="' + $('#klantId').val() + '"]').html(); 
 }
