@@ -47,6 +47,7 @@
         $('#btnAddKlant').click(function() {
             console.log('buttonClicked');
             addKlant();
+            document.getElementById("form").reset();
             return false;
         });
         

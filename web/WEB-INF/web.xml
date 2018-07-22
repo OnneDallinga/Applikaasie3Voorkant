@@ -33,6 +33,7 @@
             <url-pattern>/productOverzicht.jsp</url-pattern>
             <url-pattern>/adresOverzicht.jsp</url-pattern>
             <url-pattern>/adresFormulier.jsp</url-pattern>
+            <url-pattern>/test.jsp</url-pattern>
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
             <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
         </jsp-property-group>

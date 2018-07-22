@@ -78,11 +78,9 @@
                         data: JSON.stringify(data), 
                         success: function () {           
                             alert("Adres opgeslagen!");
-                            doAjaxForCostumer(data);
                         },
                         error: function () {
                             alert("Er is iets misgegaan!");
-                            doAjaxForCostumer(data);
 
                         },
                         complete: function () {
@@ -100,6 +98,7 @@
                     }
                     return "undefined";
                 }
+                /**
                 function doAjaxForCostumer(data) {
                     customerObj.addressCollection.put(data);
                     $.ajax({    
@@ -118,7 +117,7 @@
                             window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
                         }
                     });
-                }
+                }*/
             });
         </script>
     </body>
