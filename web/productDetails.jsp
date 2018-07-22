@@ -23,12 +23,8 @@
             
                 <%--  add/edit product here --%>
 
-                <div class="form-group">
-                <div class="row">
-                    <label>Id:</label>
-                    <input id="productId" name="id" type="text" disabled />
-                </div>
-                </div>
+                <input id="productId" name="id" type="text" disabled hidden/>
+                
                 
                 <div class="form-group">
                 <div class="row">

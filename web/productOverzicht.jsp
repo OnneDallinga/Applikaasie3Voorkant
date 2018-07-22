@@ -28,7 +28,7 @@
                 {title:"Prijs", field:"price"},
                 {title:"Aantal", field:"stock"},
                 {title:"Status", field:"productStatus"},
-                {title:"Id", field:"id"}
+                {title:"Id", field:"id", visible:false}
             ],
             rowClick:function(e, row){ 
                 var name = row.getData().name;
