@@ -15,11 +15,23 @@
         <!-- By us maked files -->
         <script src="js/main.js"></script>
         <link rel="stylesheet" type="text/css" href="css/applikaasie.css">
+        
+        <style>
+             #header {
+                /* image used for bacground */
+                background-image: url("img/cheese-plate.jpg");
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+        
         <title>Applikaasie 3</title>
     </head>
     <body>
     
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg bg-light" id="header">
             <a class="navbar-brand" href="#">Applikaasie3</a>
             <ul class="navbar-nav">
                 <li class="nav-item">

@@ -74,9 +74,11 @@
                 data: JSON.stringify(data), 
                 success: function () {           
                     alert("gewjzigd met succes!");
+                    window.location.assign("/Applikaasie3Voorkant/klantOverzicht.jsp");
                 },
                 error: function () {
                     alert("er is iets misgegaan!");
+                    window.location.assign("/Applikaasie3Voorkant/klantOverzicht.jsp");
                 },
                 complete: function () {
                     window.location.assign("/Applikaasie3Voorkant/klantOverzicht.jsp");

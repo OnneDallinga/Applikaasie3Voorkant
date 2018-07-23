@@ -49,5 +49,8 @@
         $("#adres").click(function() {
             window.open("adresOverzicht.jsp?customerId=" + id, "_self");
         });
+        $("#terug").click(function() {
+            ("klantOverzicht.jsp");
+        });
     </script>
 </html>
