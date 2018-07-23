@@ -25,17 +25,17 @@
                         </ul>
                     </li>
                 
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Bestellingen<span class="caret"></span></a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Bestelling<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="bestellingOverzicht.jsp">Bestellingoverzicht</a></li>
                             <li><a href="bestellingDetails.jsp">Bestelling toevoegen</a></li>
                         </ul>
                     </li>
                 
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Produkten<span class="caret"></span></a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="productOverzicht.jsp">Produktoverzicht</a></li>
-                            <li><a href="productDetails.jsp">Produkt toevoegen</a></li>
+                            <li><a href="productOverzicht.jsp">Productoverzicht</a></li>
+                            <li><a href="productDetails.jsp">Product toevoegen</a></li>
                         </ul>
                     </li>   
                 </ul>
