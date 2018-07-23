@@ -10,7 +10,6 @@ $(document).ready(function() {
 
 $('#btnNieuweBestelRegel').click(function() {
             window.location = "bestellingsItemDetails.jsp";
-
 });
 
 $('#btnNieuweBestelling').click(function() {
@@ -18,7 +17,7 @@ $('#btnNieuweBestelling').click(function() {
 });
 
 $('#btnSave').click(function() {
-	if ($('#productId').val() === '')
+	if ($('#orderId').val() === '')
 		addOrder();
 	else
 		updateOrder();
@@ -127,7 +126,52 @@ function deleteOrder() {
 }
 
 function checkHref() {
-    //TODO: implement
+    var query = window.location.search.substring(1);
+    if (query !== "") {
+        var orderId = query.substr(3);
+        findOrderById(orderId);
+    } else {
+        return 0;
+    }
+}
+
+function findOrderById(searchKey) {
+	console.log('findOrderById: ' + searchKey);
+	$.ajax({
+		type: 'GET',
+		url: rootURL + '/order1/' + searchKey,
+		dataType: "json",
+		error: function() {
+                    console.log("Error");
+                },
+                success: function(data) {
+                    fillFormWithOrder(data);
+                } 
+	});
+}
+
+function fillFormWithOrder(data) {
+    var inputs = Array.prototype.slice.call(document.querySelectorAll('form input'));
+
+        Object.keys(data).map(function (dataItem) {
+          inputs.map(function (inputItem) {
+            return (inputItem.name === dataItem) ? (inputItem.value = data[dataItem]) : false;
+          });
+        });
+    switch($('#orderStatus').val()) {
+        case '0':
+            $('#orderStatus').val("Open");
+            break;
+        case '1':
+            $('#orderStatus').val("Gesloten");
+            break;
+        case '2':
+            $('#orderStatus').val("Verzonden");
+            break;  
+        default :
+            $('#orderStatus').val("");
+            break;
+    }
 }
 
 //Tabulator stuff
@@ -171,10 +215,6 @@ $("#bestellingOverzicht").tabulator({
         {title:"Id", field:"id", visible:false}
     ],
     rowClick:function(e, row){ 
-//                var date_time = row.getData().date_time;
-//                var order_status = row.getData().order_status;
-//                var total_price = row.getData().total_price;        
-//                var customer_id = row.getData().customer_id;
         var id = row.getData().id;
         window.open("bestellingDetails.jsp?id=" + id);  
     },
