@@ -16,52 +16,47 @@
     </head>
     <body>
 
-        
-
         <form id="productForm" class="form-signin">
-            
-            
-                <%--  add/edit product here --%>
 
-                <input id="productId" name="id" type="text" disabled hidden/>
-                
-                
-                <div class="form-group">
+            <%--  add/edit product here --%>
+
+            <input id="productId" name="id" type="text" disabled hidden/>
+
+            <div class="form-group">
                 <div class="row">
                     <label>Status:</label>
                     <input id="productStatusText" name="productStatusText" type="text" disabled class="form-control"/>
                 </div> 
-                </div>
+            </div>
 
-                <input id="productStatus" name="productStatus" type="hidden" disabled class="form-control"/>
+            <input id="productStatus" name="productStatus" type="hidden" disabled class="form-control"/>
 
-                <div class="form-group">
+            <div class="form-group">
                 <div class="row">
                     <label>Naam:</label>
                     <input type="text" id="name" name="name" required class="form-control">
                 </div>
-                </div>
+            </div>
 
-                <div class="form-group">
+            <div class="form-group">
                 <div class="row">
                     <label>Prijs:</label>
                     <input type="text" id="price" name="price" required class="form-control"/>
                 </div>
-                </div>
+            </div>
 
-                <div class="form-group">
+            <div class="form-group">
                 <div class="row">
                     <label>Voorraad:</label>
                     <input type="text" id="stock" name="stock" required class="form-control"/>
                 </div>
-                </div>
+            </div>
 
-                <button id="btnSave" class="btn btn-primary btn-sm" type="button">Opslaan</button>
-                <button id="btnActiveer" class="btn btn-primary btn-sm" type="button">Activeer/Deactiveer</button>
-                <button id="btnReset" class="btn btn-primary btn-sm" type="reset">Reset</button>
-                <button id="btnBack" class="btn btn-primary btn-sm" type="button">Terug naar overzicht</button>
-            
-            
+            <button id="btnSave" class="btn btn-primary btn-sm" type="button">Opslaan</button>
+            <button id="btnActiveer" class="btn btn-primary btn-sm" type="button">Activeer/Deactiveer</button>
+            <button id="btnReset" class="btn btn-primary btn-sm" type="reset">Reset</button>
+            <button id="btnBack" class="btn btn-primary btn-sm" type="button">Terug naar overzicht</button>
+
         </form>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/product.js"></script>
