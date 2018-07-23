@@ -8,41 +8,52 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+             body {
+                /* image used for bacground */
+                background-image: url("img/cheese-plate.jpg");
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
         <title>Applikaasie</title>
     </head>
     <body>
-        <div id="main">
-            <div id="indexLeftColumn">
-                <a href="nieuwklant.jsp">to page nieuwklant</a>
-                <a href="productOverzicht.jsp">to page productOverzicht</a>
-                <a href="klantOverzicht.jsp">to page klantOverzicht</a>
-                <a href="bestellingOverzicht.jsp">Naar Bestellingenpagina</a>
-                <div id="welcomeText">
-                    <p>[ welcome text ]</p>
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid"> 
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Menu: </a>
                 </div>
+               
+                <ul class="navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Klant<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="klantOverzicht.jsp">Klantoverzicht</a></li>
+                            <li><a href="nieuwklant.jsp">Klant toevoegen</a></li>
+                        </ul>
+                    </li>
+                
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Bestellingen<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bestellingOverzicht.jsp">Bestellingoverzicht</a></li>
+                            <li><a href="bestellingDetails.jsp">Bestelling toevoegen</a></li>
+                        </ul>
+                    </li>
+                
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Produkten<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="productOverzicht.jsp">Produktoverzicht</a></li>
+                            <li><a href="productDetails.jsp">Produkt toevoegen</a></li>
+                        </ul>
+                    </li>   
+                </ul>
             </div>
-            <div id="indexRightColumn">
-                <div class="categoryBox">
-                    <a href="#">
-                        <span class="categoryLabelText">test</span>
-                    </a>
-                </div>
-                <div class="categoryBox">
-                    <a href="#">
-                        <span class="categoryLabelText">test</span>
-                    </a>
-                </div>
-                <div class="categoryBox">
-                    <a href="#">
-                        <span class="categoryLabelText">test</span>
-                    </a>
-                </div>
-                <div class="categoryBox">
-                    <a href="#">
-                        <span class="categoryLabelText">test</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+        </nav>
+  
+    <div class="container">
+        <p>Applikaaasie</p>
+    </div>
     </body>
 </html>
