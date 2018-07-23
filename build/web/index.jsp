@@ -8,16 +8,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-             body {
-                /* image used for bacground */
-                background-image: url("img/cheese-plate.jpg");
-                height: 100%;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        </style>
         <title>Applikaasie</title>
     </head>
     <body>

@@ -65,6 +65,9 @@
                     },
                     error: function(jqXHR, textStatus, errorThrown){
                             alert('Fout: ' + textStatus);
+                    },
+                    complete: function () {
+                        window.location.assign("/Applikaasie3Voorkant/klantOverzicht.jsp");
                     }
             });
         }
