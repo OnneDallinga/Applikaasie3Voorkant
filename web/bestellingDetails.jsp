@@ -26,7 +26,7 @@
                 <div class="form-group"> 
                 <div class="row"> 
                 <label>Geplaatst op:</label> 
-                <input id="dateTime" name="dateTime" type="text" disabled class="form-control"/> 
+                <input id="dateTime" name="dateTime" type="date"  class="form-control"/> 
                 </div> 
                 </div> 
  
@@ -67,43 +67,6 @@
             
         </form>
         <script src="js/bestelling.js"></script>
-        <script>
-                $('#btnNieuweBestelRegel').click(function() {
-//                           var order_id = $('#bestellingId').val();
-//                           window.location = "bestellingsItemDetails.jsp?bestelling=" + order_id;
-                            window.location = "bestellingsItemDetails.jsp";
-                          
-                });
-                
-               var tabledata = [];
-               $("#bestellingsItemOverzicht").tabulator({
-                    height:325, 
-                    layout:"fitColumns", 
-                    columns:[ //Define Table Columns
-                        {title:"Product", field:"productId"},
-                        {title:"Aantal", field:"amount"},
-                        {title:"Subtotaal", field:"subTotal"},
-                        {title:"Order Id", field:"orderId", visible:false},
-                        {title:"Id", field:"id", visible:false}
-                    ],
-                    rowClick:function(e, row){ 
-//                        var product_id = row.getData().product_id;
-//                        var amount = row.getData().amount;
-//                        var sub_total = row.getData().sub_total;        
-//                        var order_id = row.getData().order_id;
-                        var id = row.getData().id;
-                        window.open("bestellingsItemDetails.jsp?id=" + id);  
-                    },
-                });
-                $.get("http://localhost:8080/Appikaasie/REST/orderitem", function(data,status) {
-                    console.log("status: " + status)    
-                    console.log("data: " + data);
-                    $.each(data, function(index, field) {
-                        var obj = {productId: field.productId, amount: field.amount, subTotal: field.subTotal, orderId: field.orderId, id: field.id}
-                        tabledata.push(obj);
-                    });
-                    $("#bestellingsItemOverzicht").tabulator("setData", tabledata);
-                });
-            </script>
+        
     </body>
 </html>

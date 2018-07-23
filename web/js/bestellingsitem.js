@@ -3,9 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function() { 
+$(document).ready(function() {
+    checkHref();
     findAllProducts(); 
 }); 
+
+function checkHref() {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var bestelItemId = url.searchParams.get("id");
+    var bestellingId = url.searchParams.get("bestelling");
+    console.log(bestelItemId);
+    console.log(bestellingId);
+}
 
 function findAllProducts() { 
     console.log('findAllProducts'); 

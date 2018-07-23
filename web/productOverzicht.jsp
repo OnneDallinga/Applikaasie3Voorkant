@@ -15,48 +15,6 @@
         <div id="productOverzicht"></div>
         <button id="btnNieuwProduct" class="btn btn-primary btn-lg" type="button">Product toevoegen</button>
     </body>
-    <script>
-        $('#btnNieuwProduct').click(function() {
-           window.location = "productDetails.jsp";
-        });
-        var tabledata = [];
-       $("#productOverzicht").tabulator({
-            height:650, 
-            layout:"fitColumns", 
-            columns:[ //Define Table Columns
-                {title:"Naam", field:"name"},
-                {title:"Prijs", field:"price"},
-                {title:"Aantal", field:"stock"},
-                {title:"Status", field:"productStatus"},
-                {title:"Id", field:"id", visible:false}
-            ],
-            rowClick:function(e, row){ 
-                var name = row.getData().name;
-                var price = row.getData().price;
-                var stock = row.getData().stock;        
-                var productStatus = row.getData().productStatus;
-                var id = row.getData().id;
-                window.location = "productDetails.jsp?id=" + id;  
-            },
-        });
-        $.get("http://localhost:8080/Appikaasie/REST/product", function(data,status) {
-            console.log("status: " + status)    
-            console.log("data: " + data);
-            $.each(data, function(index, field) {
-                var obj = {name: field.name, 
-                           price: field.price, 
-                           stock: field.stock, 
-                           productStatus: field.productStatus, 
-                           id: field.id}
-                console.log(obj.productStatus);
-                if (obj.productStatus == "0")
-                    obj.productStatus = "Inactief";
-                else
-                    obj.productStatus = "Actief";
-                tabledata.push(obj);
-            });
-            $("#productOverzicht").tabulator("setData", tabledata);
-        });
-    </script>    
+    <script src="js/product.js"></script>  
 
 
