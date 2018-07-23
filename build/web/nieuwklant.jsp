@@ -72,6 +72,8 @@
         }
         
         function formToJSON() {
+            var adresCollection = [];
+            var orderCollection = [];
             console.log('formToJSON');
             var klantId = $('#klantId').val();
             return JSON.stringify({
@@ -80,8 +82,8 @@
                     "lastName": $('#lastName').val(),
                     "lastNamePrefix": $('#lastNamePrefix').val(),
                     "email": $('#email').val(),
-                    "addressCollection": null,
-                    "order1Collection": null
+                    "addressCollection": adresCollection,
+                    "order1Collection": orderCollection
             });
         }
 

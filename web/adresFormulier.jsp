@@ -61,7 +61,8 @@
                 $.get("http://localhost:8080/Appikaasie/REST/customer/" + customerId , function(customerData, status) {
                         alert("customerData: "+ customerData.firstName + " " +customerData.id);
                         customerObj = {voornaam: customerData.firstName, achternaam: customerData.lastName, toevoegsel: customerData.toevoegsel, email: customerData.email, id: customerData.id}
-                    });       
+                        customerObj.addressCollection = [];
+                });       
                 $("#form").submit(function(e) {
                     var data = {};
                     $.each(this, function(i, v) {
@@ -99,26 +100,31 @@
                     }
                     return "undefined";
                 }
-                
+                /**
                 function doAjaxForCostumer(data) {
-                    customerObj.addressCollection.push(data);
+                    customerObj.addressCollection[customerObj.addressCollection.length] = data;
                     $.ajax({    
                         contentType: 'application/json',
                         type: "put", 
                         url: "http://localhost:8080/Appikaasie/REST/customer/" + customerId, 
                         dataType: 'json', 
-                        data: JSON.stringify(data), 
+                        data: JSON.stringify(customerObj), 
                         success: function () {           
                             alert("gewjzigd met succes!");
+                            //window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
+                            window.open("/adresOverzicht.jsp", "_self");
                         },
                         error: function () {
                             alert("er is iets misgegaan!");
+                            //window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
+                            window.open("/adresOverzicht.jsp", "_self");
                         },
                         complete: function () {
-                            window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
+                            //window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
+                            window.open("/adresOverzicht.jsp", "_self");
                         }
                     });
-                };
+                };*/
             });
         </script>
     </body>
