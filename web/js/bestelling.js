@@ -17,6 +17,14 @@ $('#btnNieuweBestelling').click(function() {
            window.location = "bestellingDetails.jsp";
 });
 
+$('#btnSave').click(function() {
+	if ($('#productId').val() === '')
+		addOrder();
+	else
+		updateOrder();
+	return false;
+});
+
 function findAllKlanten() { 
     console.log('findAllKlanten'); 
   $.ajax({ 
@@ -47,6 +55,82 @@ function select_option() {
     return $('span#klantNaam select option[value="' + $('#klantId').val() + '"]').html(); 
 }
 
+function renderDetails(order) {
+	$('#orderId').val(order.id);
+	$('#dateTime').val(order.dateTime);
+        $('#orderStatus').val(order.orderStatus);
+        $('#totalPrice').val(order.totalPrice);
+        $('#customerId').val(order.customerId);
+}
+
+function formToJSON() {
+	var orderId = $('#orderId').val();
+	return JSON.stringify({
+		"id": orderId == "" ? null : orderId, 
+		"dateTime": $('#dateTime').val(), 
+                "orderStatus": $('#orderStatus').val(),
+                "totalPrice": $('#totalPrice').val(),
+                "customerId": $('#customerId').val()
+		});
+}
+
+function addOrder() {
+	console.log('addOrder');
+	$.ajax({
+		type: 'POST',
+		contentType: 'application/json',
+		url: rootURL + "/order1",
+		dataType: "json",
+		data: formToJSON(),
+		success: function(data, textStatus, jqXHR){
+			alert('Order created successfully');
+			$('#btnDelete').show();
+			$('#orderId').val(data.id);
+                         
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			alert('addOrder error: ' + textStatus);
+		}
+	});
+}
+
+function updateOrder() {
+	console.log('updateOrder');
+	$.ajax({
+		type: 'PUT',
+		contentType: 'application/json',
+		url: rootURL + '/order1/' + $('#orderId').val(),
+		dataType: "json",
+		data: formToJSON(),
+		success: function(data, textStatus, jqXHR){
+                    alert('Order updated successfully');
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+                    alert('updateOrder error: ' + textStatus);
+		}
+	});
+    checkHref();    
+}
+
+function deleteOrder() {
+	console.log('deleteOrder');
+	$.ajax({
+		type: 'DELETE',
+		url: rootURL + '/order1/' + $('#orderId').val(),
+		success: function(data, textStatus, jqXHR){
+			alert('Order deleted successfully');
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			alert('deleteOrder error: ' + textStatus);
+		}
+	});
+}
+
+function checkHref() {
+    //TODO: implement
+}
+
+//Tabulator stuff
 var tabledata = [];
 $("#bestellingsItemOverzicht").tabulator({
     height:325, 
