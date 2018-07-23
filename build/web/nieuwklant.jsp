@@ -41,7 +41,6 @@
             <input id="klantId" name="klantId" type="text" disabled hidden />
             <button id="btnAddKlant" class="btn btn-primary btn-lg">Submit</button>
         </form>
-        
         <script> 
         
         $('#btnAddKlant').click(function() {
@@ -80,7 +79,9 @@
                     "firstName": $('#firstName').val(), 
                     "lastName": $('#lastName').val(),
                     "lastNamePrefix": $('#lastNamePrefix').val(),
-                    "email": $('#email').val()
+                    "email": $('#email').val(),
+                    "addressCollection": null,
+                    "order1Collection": null
             });
         }
 

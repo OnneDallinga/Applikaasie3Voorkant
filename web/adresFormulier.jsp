@@ -78,6 +78,7 @@
                         data: JSON.stringify(data), 
                         success: function () {           
                             alert("Adres opgeslagen!");
+                            doAjaxForCostumer(data);
                         },
                         error: function () {
                             alert("Er is iets misgegaan!");
@@ -98,9 +99,9 @@
                     }
                     return "undefined";
                 }
-                /**
+                
                 function doAjaxForCostumer(data) {
-                    customerObj.addressCollection.put(data);
+                    customerObj.addressCollection.push(data);
                     $.ajax({    
                         contentType: 'application/json',
                         type: "put", 
@@ -117,7 +118,7 @@
                             window.location.assign("/Applikaasie3Voorkant/adresOverzicht.jsp");
                         }
                     });
-                }*/
+                };
             });
         </script>
     </body>

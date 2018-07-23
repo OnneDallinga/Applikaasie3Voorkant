@@ -44,6 +44,7 @@
                 </div>
             </div>
             <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
+            <button type="button" id="cancel" class="btn btn-primary btn-lg">Cancel</button>
         </form>
     </body>
     <script>
@@ -56,7 +57,10 @@
             if(urlVariable[1] != "undefined" || urlVariable[1] != null) {
                 document.getElementById(urlVariable[0]).value = urlVariable[1];
             } 
-        }      
+        }
+        $("#cancel").click(function () {
+            window.location.assign("/Applikaasie3Voorkant/klantOverzicht.jsp");
+        }); 
         $("#form").submit(function(e) {
             var data = {};
             var id;

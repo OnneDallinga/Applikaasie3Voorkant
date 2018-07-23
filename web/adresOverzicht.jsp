@@ -15,7 +15,7 @@
         <div id="adresOverzicht"></div>
         <div class="btn-group">
             <button type="button" id="addressToevoegen" class="btn btn-primary">Toevoegen adress</button>
-            <button type="button" class="btn btn-primary">Terug naar klant overzicht</button>
+            <button type="button" class="btn btn-primary" id="terug">Terug naar klant overzicht</button>
         </div>
     </body>
     <script>
@@ -67,5 +67,8 @@
             }
             return "undefined";
         }
+        $("#terug").click(function() {
+            window.open("klantOverzicht.jsp", "_self");
+        });
     </script>    
 </html>

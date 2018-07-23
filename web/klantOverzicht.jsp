@@ -17,7 +17,7 @@
     <script>
         var tabledata = [];
        $("#klantOverzicht").tabulator({
-            height:650, 
+            height:350, 
             layout:"fitColumns", 
             columns:[ //Define Table Columns
                 {title:"Voornaam", field:"voornaam"},

@@ -50,7 +50,7 @@
             window.open("adresOverzicht.jsp?customerId=" + id, "_self");
         });
         $("#terug").click(function() {
-            ("klantOverzicht.jsp");
+            window.open("klantOverzicht.jsp", "_self");
         });
     </script>
 </html>
